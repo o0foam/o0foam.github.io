@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>fi3ework&#39;s Studio</title>
+    <title>o0foam的自我介绍 · fi3ework&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,6 +203,8 @@
 </head>
 
     
+        <body class="about-body">
+    
     
 <header class="header">
 
@@ -220,16 +222,22 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/about-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            o0foam的自我介绍
             
         </h1>
         <!-- 副标题 -->
@@ -338,185 +346,11 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/12/vue添加i18n/" >
-            
-                <span>vue添加i18n</span>
-        </a>
-        <div class="abstract-content">
-            
-首先在vue-cli里面用命令行引入i18n
-1npm install vue-i18n
-
-新建文件夹lang，然后在里面创建en-US.js、zh-CN.js还有language.js，图片如下
-
-在main.js里面引入vue-i18n插件1import VueI18n from 'vue-i18n'
-
-
-4.再通过插件形式进行挂载1Vue.use(VueI18n)
-
-语言标识，之后通过this.$i18n.locale进行语言切换。1234const i18n = new VueI18n(&#123;  locale: "cn",  messages: language&#125...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
+            <!-- 不可以删除，否则会调用post的layout  -->
+<main class="main about-page">
+    <article class="article-entry">
+        <h2 id="你值得更好的"><a href="#你值得更好的" class="headerlink" title="你值得更好的"></a>你值得更好的</h2>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/10/简单vue路由配置/" >
-            
-                <span>简单vue路由配置</span>
-        </a>
-        <div class="abstract-content">
-            vue路由默认为Hash模式，可以在routes上添加一个对象1mode: 'history',
-来去掉‘#’号
-方法1
-在components里创建一个名为 testFile.vue 文件
-打开router里面的index.js，用import引入文件(tttFile是一个变量名)1import tttFile from '@/components/testFile'
-
-
-3.在数组routes里面添加对象12345&#123;    path: '/tFile',    name: 'ttFile',    component: tttFile&#125;
- path是地址路径  n...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/10/vue-cli2.0搭建过程/" >
-            
-                <span>vue-cli2.0搭建过程</span>
-        </a>
-        <div class="abstract-content">
-            搭建vue环境：
-打开命令行并输入指令
-1npm install -g vue-cli
-
-进入你的文件夹,继续用命令行输入（注：project-name为项目名称）
-1vue init webpack project-name
-
-命令行输完后会跳出一些简单的vue配置参数，可以按照以下格式进行配置：
-123456789101112131415&lt;!-- 你的项目title --&gt;project name xxx&lt;!-- 默认就可以 --&gt;project description&lt;!-- 作者名 --&gt;author&lt;!-- 默认就可以 --&gt;vu...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/07/边框透明度问题/" >
-            
-                <span>边框透明度问题</span>
-        </a>
-        <div class="abstract-content">
-            边框也可以制作透明样式，只是要加一个 background-clip: padding-box; 的样式才能实现
-html部分123&lt;div  class="box"&gt; out    &lt;div class="paddingBox"&gt; in &lt;/div&gt;&lt;/div&gt;
-
-css部分1234567891011121314.box &#123;    font-size: 30px;    background: #12c6aa;    height: 300px;    width: 300px;&#125;.paddingBox &#123; ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "css">css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/06/markdowny语法/" >
-            
-                <span>&#39;markdowny语法&#39;</span>
-        </a>
-        <div class="abstract-content">
-            1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556# 这是一级标题## 这是二级标题### 这是三级标题#### 这是四级标题##### 这是五级标题###### 这是六级标题** 要加粗的文字左右分别用两个*号包起来 ***要倾斜的文字左右分别用一个*号包起来****要倾斜和加粗的文字左右分别用三个*号包起来***~~要加删除线的文字左右分别用两个~号包起来~~&gt;这是引用的内容&gt;&gt;这是引用的内容&gt;&gt;&g...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "other">other</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    <!-- paginator  -->
-    
 </main>
             <!-- profile -->
             
