@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>vue添加i18n · fi3ework&#39;s Studio</title>
+    <title>git操作 · fi3ework&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >fi3ework&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">vue添加i18n</a>
+                <a href="#" class="post-name">git操作</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            vue添加i18n
+            git操作
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "git">git</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">424</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">200</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/12/12</span>
+                    <span class="post-intro-time">2018/12/14</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,34 +401,34 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <ol>
-<li><p>首先在vue-cli里面用命令行引入i18n</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-i18n</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>新建文件夹lang，然后在里面创建en-US.js、zh-CN.js还有language.js，图片如下<br><img src="/img/i18n目录.png" alt="i18n目录"></p>
-</li>
-<li>在main.js里面引入vue-i18n插件<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> VueI18n <span class="keyword">from</span> <span class="string">'vue-i18n'</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>4.再通过插件形式进行挂载<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.use(VueI18n)</span><br></pre></td></tr></table></figure></p>
-<ol start="5">
-<li>语言标识，之后通过this.$i18n.locale进行语言切换。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> i18n = <span class="keyword">new</span> VueI18n(&#123;</span><br><span class="line">  locale: <span class="string">"cn"</span>,</span><br><span class="line">  messages: language</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>6.在vue项目里面注入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  i18n,</span><br><span class="line">  router,</span><br><span class="line">  components: &#123; App &#125;,</span><br><span class="line">  template: <span class="string">'&lt;App/&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>7.在en-US.js里面写入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> en = &#123;</span><br><span class="line">    music: <span class="string">'Music'</span>,<span class="comment">//网易云音乐</span></span><br><span class="line">    findMusic: <span class="string">'Find Music'</span>,<span class="comment">//发现音乐</span></span><br><span class="line">    myMusic: <span class="string">'My Music'</span>,<span class="comment">//我的音乐</span></span><br><span class="line">    friend: <span class="string">'Friend'</span>,<span class="comment">//朋友</span></span><br><span class="line">    musician: <span class="string">'Musician'</span>,<span class="comment">//音乐人</span></span><br><span class="line">    download: <span class="string">'Download'</span><span class="comment">//下载客户端</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> en;</span><br></pre></td></tr></table></figure></p>
-<p>8.在文件zh-CN.js输入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cn = &#123;</span><br><span class="line">    music: <span class="string">'网易云音乐'</span>,</span><br><span class="line">    findMusic: <span class="string">'发现音乐'</span>,</span><br><span class="line">    myMusic: <span class="string">'我的音乐'</span>,</span><br><span class="line">    friend: <span class="string">'朋友'</span>,</span><br><span class="line">    musician: <span class="string">'音乐人'</span>,</span><br><span class="line">    download: <span class="string">'下载客户端'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> cn;</span><br></pre></td></tr></table></figure></p>
-<p>9.在文件language.js输入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> en <span class="keyword">from</span> <span class="string">'./en-US'</span></span><br><span class="line"><span class="keyword">import</span> cn <span class="keyword">from</span> <span class="string">'./zh-CN'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> languagePack = &#123;</span><br><span class="line">    en,cn</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> languagePack;</span><br></pre></td></tr></table></figure></p>
-<p>10.在helloWorld.vue里面输入<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"hello"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;$t('music')&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;$t('findMusic')&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;$t('myMusic')&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;$t('friend')&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;$t('musician')&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;$t('download')&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"lang_cn('cn')"</span>&gt;</span>中文<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"lang_en('en')"</span>&gt;</span>英文<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">  data () &#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span>&#123;&#125;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">  methods: &#123;</span></span><br><span class="line"><span class="undefined">    lang_cn(lang)&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(lang)</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$i18n.locale = lang;</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    lang_en(lang)&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(lang)</span></span><br><span class="line"><span class="javascript">      <span class="keyword">this</span>.$i18n.locale = lang;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;,</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">p &#123;</span></span><br><span class="line"><span class="undefined">  line-height: 20px;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="大工告成！！！"><a href="#大工告成！！！" class="headerlink" title="大工告成！！！"></a>大工告成！！！</h2>
+        <h3 id="首次提交"><a href="#首次提交" class="headerlink" title="首次提交"></a>首次提交</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git status</span><br><span class="line">git remote add origin http://192.168.1.227/xgz/bmctrl-en.git</span><br><span class="line">git add *</span><br><span class="line">git status</span><br><span class="line">git commit-m &apos;首次提交&apos;</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="git-master让其他人开发你的项目"><a href="#git-master让其他人开发你的项目" class="headerlink" title="git master让其他人开发你的项目"></a>git master让其他人开发你的项目</h3><ul>
+<li>在git lap里面选择一个项目</li>
+<li>点击左侧的settings</li>
+<li>点击左侧的members</li>
+<li>点击右侧的绿色按钮 add members</li>
+<li>在people里选择一个人</li>
+<li>在 product access 选择 developer(开发者的意思)</li>
+<li>在点击 add users to project</li>
+</ul>
+<hr>
+<h3 id="把主分支的项目拉下来"><a href="#把主分支的项目拉下来" class="headerlink" title="把主分支的项目拉下来"></a>把主分支的项目拉下来</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="日常提交"><a href="#日常提交" class="headerlink" title="日常提交"></a>日常提交</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line">git add --all</span><br><span class="line">git commit -m &quot;提交的内容&quot;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="合并请求"><a href="#合并请求" class="headerlink" title="合并请求"></a>合并请求</h3><p><img src="/img/git合并请求1.png" alt="git合并请求1"><br><img src="/img/git合并请求2.png" alt="git合并请求2"><br><img src="/img/git合并请求3.png" alt="git合并请求3"><br><img src="/img/git合并请求4.png" alt="git合并请求4"><br><img src="/img/git合并请求5.png" alt="git合并请求5"></p>
+<hr>
+<h3 id="git，在vscode里上传代码"><a href="#git，在vscode里上传代码" class="headerlink" title="git，在vscode里上传代码"></a>git，在vscode里上传代码</h3><p><img src="/img/git-vscode操作1.png" alt="git-vscode操作1"><br><img src="/img/git-vscode操作2.png" alt="git-vscode操作2"><br>相当于git add 一个文件<br><img src="/img/git-vscode操作3.png" alt="git-vscode操作3"><br>相当于git commit<br><img src="/img/git-vscode操作4.png" alt="git-vscode操作4"><br><img src="/img/git-vscode操作5.png" alt="git-vscode操作5"><br>再点推送到，选一个网址，最后输入你git的账号和密码（如果是ssh方式就不用输入）</p>
+
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://yoursite.com">John Doe</a>
-            <p>原文链接：<a href="http://yoursite.com/2018/12/12/vue添加i18n/">http://yoursite.com/2018/12/12/vue添加i18n/</a>
-            <p>发表日期：<a href="http://yoursite.com/2018/12/12/vue添加i18n/">December 12th 2018, 7:42:31 pm</a>
-            <p>更新日期：<a href="http://yoursite.com/2018/12/12/vue添加i18n/">December 13th 2018, 11:15:51 pm</a>
+            <p>原文链接：<a href="http://yoursite.com/2018/12/14/git操作/">http://yoursite.com/2018/12/14/git操作/</a>
+            <p>发表日期：<a href="http://yoursite.com/2018/12/14/git操作/">December 14th 2018, 7:43:09 pm</a>
+            <p>更新日期：<a href="http://yoursite.com/2018/12/14/git操作/">December 14th 2018, 11:17:05 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -436,17 +436,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2018/12/14/vs-code插件整理/" title= "vs-code插件整理">
-                    <div class="nextTitle">vs-code插件整理</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2018/12/10/简单vue路由配置/" title= "简单vue路由配置">
-                    <div class="prevTitle">简单vue路由配置</div>
+                <a href= "/2018/12/14/vs-code插件整理/" title= "vs-code插件整理">
+                    <div class="prevTitle">vs-code插件整理</div>
                 </a>
             
         </li>
@@ -565,7 +560,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#大工告成！！！"><span class="toc-number">1.</span> <span class="toc-text">大工告成！！！</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#首次提交"><span class="toc-number">1.</span> <span class="toc-text">首次提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-master让其他人开发你的项目"><span class="toc-number">2.</span> <span class="toc-text">git master让其他人开发你的项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#把主分支的项目拉下来"><span class="toc-number">3.</span> <span class="toc-text">把主分支的项目拉下来</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日常提交"><span class="toc-number">4.</span> <span class="toc-text">日常提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#合并请求"><span class="toc-number">5.</span> <span class="toc-text">合并请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git，在vscode里上传代码"><span class="toc-number">6.</span> <span class="toc-text">git，在vscode里上传代码</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
