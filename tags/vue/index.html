@@ -13,9 +13,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
-    <meta name="author" content="John Doe">
+    <meta name="author" content="o0foam.">
     <meta name="renderer" content="webkit">
-    <meta name="copyright" content="John Doe">
+    <meta name="copyright" content="o0foam.">
     
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
@@ -346,18 +346,44 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/12/17/vue组件化开发/" >
+            
+                <span>vue组件化开发</span>
+        </a>
+        <div class="abstract-content">
+            文件目录：其中index.vue为父组件，v-common为子组件记得先配置好路由
+组件引入步骤：1.在父组件的script里面用import引入1import vCommon from "./v-common"
+2.用components注册该组件1components: &#123; vC...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/12/12/vue添加i18n/" >
             
                 <span>vue添加i18n</span>
         </a>
         <div class="abstract-content">
-            
-首先在vue-cli里面用命令行引入i18n
-1npm install vue-i18n
-
-新建文件夹lang，然后在里面创建en-US.js、zh-CN.js还有language.js，图片如下
-
-在main.js里面引入vue-i18n插件1import VueI18n from 'vu...
+            1.首先在vue-cli里面用命令行引入i18n1npm install vue-i18n
+2.新建文件夹lang，然后在里面创建en-US.js、zh-CN.js还有language.js，图片如下3.在main.js里面引入vue-i18n插件1import VueI18n from 'v...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -388,9 +414,7 @@
         <div class="abstract-content">
             vue路由默认为Hash模式，可以在routes上添加一个对象1mode: 'history',
 来去掉‘#’号
-方法1
-在components里创建一个名为 testFile.vue 文件
-打开router里面的index.js，用import引入文件(tttFile是一个变量名)1impo...
+方法11.在components里创建一个名为 testFile.vue 文件2.打开router里面的index.js，用import引入文件(tttFile是一个变量名)1im...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -419,14 +443,9 @@
                 <span>vue-cli2.0搭建过程</span>
         </a>
         <div class="abstract-content">
-            搭建vue环境：
-打开命令行并输入指令
-1npm install -g vue-cli
-
-进入你的文件夹,继续用命令行输入（注：project-name为项目名称）
-1vue init webpack project-name
-
-命令行输完后会跳出一些简单的vue配置参数，可以按照以下格式进行...
+            搭建vue环境：1.打开命令行并输入指令1npm install -g vue-cli
+2.进入你的文件夹,继续用命令行输入（注：project-name为项目名称）1vue init webpack project-name
+3.命令行输完后会跳出一些简单的vue配置参数，可以按照以下格式进...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -633,9 +652,37 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 8
+        Total : 10
         </div>
         <!-- search  -->
         
@@ -648,6 +695,21 @@
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/17</span><a class="archive-post-title" href= "/2018/12/17/实用工具/" >实用工具</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/17</span><a class="archive-post-title" href= "/2018/12/17/前端知识网页/" >前端知识网页</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/17</span><a class="archive-post-title" href= "/2018/12/17/vue组件化开发/" >vue组件化开发</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -681,12 +743,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2018/12/06/markdowny语法/" >'markdowny语法'</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">07/10</span><a class="archive-post-title" href= "/2018/07/10/hello-world/" >Hello World</a>
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2018/12/06/markdowny语法/" >markdowny语法</a>
         </li>
     
     </div>
@@ -694,13 +751,15 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+    
         <span class="sidebar-tag-name" data-tags="other"><span class="iconfont-archer">&#xe606;</span>other</span>
     
         <span class="sidebar-tag-name" data-tags="vue"><span class="iconfont-archer">&#xe606;</span>vue</span>
     
-        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
-    
         <span class="sidebar-tag-name" data-tags="css"><span class="iconfont-archer">&#xe606;</span>css</span>
+    
+        <span class="sidebar-tag-name" data-tags="others"><span class="iconfont-archer">&#xe606;</span>others</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -744,7 +803,7 @@ jsonContent:
     <script>
     var siteMeta = {
         root: "/",
-        author: "John Doe"
+        author: "o0foam."
     }
 </script>
     <!-- CDN failover -->
