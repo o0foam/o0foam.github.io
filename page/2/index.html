@@ -78,8 +78,6 @@
     <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -203,8 +201,10 @@
 </head>
 
     
+        <body class="home-body">
     
-<header class="header">
+    
+<header class="header index-header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -220,21 +220,34 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            Foam's Studio.
+            <!-- 文章页  -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
+            
+            
+                I will break these chains that bind me, happiness will find me.
+            
+            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -346,136 +359,24 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/19/import引入文件方法/" >
+        <a class="abstract-title" href = "/2018/12/07/边框透明度问题/" >
             
-                <span>import引入文件方法</span>
+                <span>边框透明度问题</span>
         </a>
         <div class="abstract-content">
-            import引入css:1@import url("../static/css/index_section.css");
-import引入noude_modules的插件:1import VueI18n from 'vue-i18n'
-import引入单个对象：（用export defailt...
+            边框也可以制作透明样式，只是要加一个 background-clip: padding-box; 的样式才能实现
+html部分123&lt;div  class="box"&gt; out    &lt;div class="paddingBox"&gt; in &lt;/div&gt;&lt...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/19</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/07</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "others">others</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/17/实用工具/" >
-            
-                <span>实用工具</span>
-        </a>
-        <div class="abstract-content">
-            
-图片无损压缩
-前端搜索引擎
-PS网页版
-生成RESTful Web API文档
-打字练习网站
-javascript动画库搜图网站
-alpha
-图片搜索引擎
-librestock 需翻墙不然打开很慢
-unsplash
-金属立体风
-脑洞大开的设计师
-游戏CG
-美食
-下载无法保存的图片 直接复制图...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "others">others</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/17/前端知识网页/" >
-            
-                <span>前端知识网页</span>
-        </a>
-        <div class="abstract-content">
-            
-详解css的Flex布局
-理解跨域及常用解决方案
-CSS 列表项布局技巧
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "others">others</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/14/vs-code插件整理/" >
-            
-                <span>vs-code插件整理</span>
-        </a>
-        <div class="abstract-content">
-            自动匹配tag1Auto Rename Tag
-匹配括号1Bracket Pair Colorizer
-中文语言包1Chinese (Simplified) Language Pack for Visual Studio Code
-吸血鬼主题1Dracula Official
-代码规范1ESL...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "others">others</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "css">css</a>
     
 </div>
             
@@ -513,8 +414,113 @@ CSS 列表项布局技巧
     
     <!-- paginator  -->
     
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+    
 </main>
             <!-- profile -->
+            
+            <div class="profile">
+    <img class="profile-avatar" alt="avatar" src= /avatar/Misaka.jpg >
+    <div class="profile-name">Foam.</div>
+    
+    <div class="profile-signature">
+        witness me
+    </div>
+    
+    
+    <div class="profile-social">
+        
+    
+        
+            
+                <a href="mailto:522653886@qq.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="https://github.com/o0foam" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png" />
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    
+        <div class="friends">
+            <div>FRIENDS</div>
+            
+                
+                    <span>
+                        <a href= //https://sanhaoxian.github.io/ target="_black">three</a>
+                    </span>
+                
+            
+                
+                    <span>
+                        <a href= //https://sanhaoxian.github.io/ target="_black">line</a>
+                    </span>
+                
+            
+                
+                    <span>
+                        <a href= //https://sanhaoxian.github.io/ target="_black">boy</a>
+                    </span>
+                
+            
+        </div>
+    
+    
+        <div class="about-me">
+            <a href = "/about" >ABOUT ME</a>
+        </div>
+    
+</div>
             
         </div>
         <footer class="footer footer-unloaded">
