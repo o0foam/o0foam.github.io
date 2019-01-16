@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>sass的引入 · Foam&#39;s Studio</title>
+    <title>cordova打包vue项目 · Foam&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Foam&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">sass的引入</a>
+                <a href="#" class="post-name">cordova打包vue项目</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            sass的引入
+            cordova打包vue项目
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "css">css</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "others">others</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">90</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">283</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/01/07</span>
+                    <span class="post-intro-time">2019/01/16</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,19 +401,20 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="安装sass依赖包"><a href="#安装sass依赖包" class="headerlink" title="安装sass依赖包"></a>安装sass依赖包</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev sass-loader</span><br><span class="line">npm install --save-dev node-sass</span><br></pre></td></tr></table></figure>
-<h1 id="配置webpack"><a href="#配置webpack" class="headerlink" title="配置webpack"></a>配置webpack</h1><p>找到build文件夹里的webpack.base.conf.js文件，并给rules对象添加多一项配置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  test: <span class="regexp">/\.sass$/</span>,</span><br><span class="line">  loaders: [<span class="string">'style'</span>, <span class="string">'css'</span>, <span class="string">'sass'</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="写sass"><a href="#写sass" class="headerlink" title="写sass"></a>写sass</h1><p>在一个vue文件里面写上标签<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;style lang="scss"&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
-<p>然后就可以开始工作了<br>附上sass链接： <a href="http://sass.bootcss.com/" target="_blank" rel="noopener">sass文档</a></p>
+        <h2 id="打包前准备"><a href="#打包前准备" class="headerlink" title="打包前准备"></a>打包前准备</h2><p><a href="http://www.hangge.com/blog/cache/detail_1285.html" target="_blank" rel="noopener">cordova环境配置</a><br><a href="https://blog.csdn.net/qq_35246620/article/details/61208961" target="_blank" rel="noopener">JDK的配置</a><br><a href="https://blog.csdn.net/zzy1078689276/article/details/80380118" target="_blank" rel="noopener">SDK的配置</a><br><a href="https://www.hangge.com/blog/cache/detail_2101.html" target="_blank" rel="noopener">cordova打包vue</a><br>联机模式：<a href="chrome://inspect/#devices" target="_blank" rel="noopener">chrome://inspect/#devices</a> <strong>记得开vpn</strong></p>
+<h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><p><img src="/img/cordova打包vue项目文件目录.jpg" alt="cordova打包vue项目文件目录"><br>其中，webcode是vue的脚手架，其他是cordova的项目<br>1.在文件夹webcode/config里找到index.js,修改对象build的参数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">build: &#123;</span><br><span class="line">    index: path.resolve(__dirname, <span class="string">'../../www/index.html'</span>),</span><br><span class="line">    assetsRoot: path.resolve(__dirname, <span class="string">'../../www'</span>),</span><br><span class="line">    assetsSubDirectory: <span class="string">'static'</span>,</span><br><span class="line">    assetsPublicPath: <span class="string">''</span>,</span><br><span class="line">    productionSourceMap: <span class="literal">true</span>,</span><br><span class="line">    devtool: <span class="string">'#source-map'</span>,</span><br><span class="line">    productionGzip: <span class="literal">false</span>,</span><br><span class="line">    productionGzipExtensions: [<span class="string">'js'</span>, <span class="string">'css'</span>],</span><br><span class="line">    bundleAnalyzerReport: process.env.npm_config_report</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意：主要改变的是index、assetsRoot、assetsSubDirectory和assetsPublicPath</strong><br>2.修改main.js,将 new Vue() 代码放到 deviceready 回调里面。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(process.env.NODE_ENV == <span class="string">'development'</span> )&#123;</span><br><span class="line">  <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">      el: <span class="string">'#app'</span>,</span><br><span class="line">      router,</span><br><span class="line">      components: &#123; App &#125;,</span><br><span class="line">      template: <span class="string">'&lt;App/&gt;'</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  <span class="comment">// add cordova.js only if serving the app through file://</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">window</span>.location.protocol === <span class="string">'file:'</span> || <span class="built_in">window</span>.location.port === <span class="string">'3000'</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> cordovaScript = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>)</span><br><span class="line">      cordovaScript.setAttribute(<span class="string">'type'</span>, <span class="string">'text/javascript'</span>)</span><br><span class="line">      cordovaScript.setAttribute(<span class="string">'src'</span>, <span class="string">'cordova.js'</span>)</span><br><span class="line">      <span class="built_in">document</span>.body.appendChild(cordovaScript)</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="built_in">document</span>.addEventListener(<span class="string">'deviceready'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'当设备设备准备好的时候调用'</span>);</span><br><span class="line">      <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">          el: <span class="string">'#app'</span>,</span><br><span class="line">          router,</span><br><span class="line">          components: &#123; App &#125;,</span><br><span class="line">          template: <span class="string">'&lt;App/&gt;'</span></span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;, <span class="literal">false</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.打包，在vue文件目录下打开命令行，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure></p>
+<p>4.让完成的项目运行在安卓设备里，需要在cordova(就是vue的上一级目录)输入命令行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cordova run android</span><br></pre></td></tr></table></figure></p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://o0foam.github.io">o0foam.</a>
-            <p>原文链接：<a href="https://o0foam.github.io/2019/01/07/sass的引入/">https://o0foam.github.io/2019/01/07/sass的引入/</a>
-            <p>发表日期：<a href="https://o0foam.github.io/2019/01/07/sass的引入/">January 7th 2019, 11:04:39 pm</a>
-            <p>更新日期：<a href="https://o0foam.github.io/2019/01/07/sass的引入/">January 7th 2019, 11:20:26 pm</a>
+            <p>原文链接：<a href="https://o0foam.github.io/2019/01/16/cordova打包vue项目/">https://o0foam.github.io/2019/01/16/cordova打包vue项目/</a>
+            <p>发表日期：<a href="https://o0foam.github.io/2019/01/16/cordova打包vue项目/">January 16th 2019, 8:08:39 pm</a>
+            <p>更新日期：<a href="https://o0foam.github.io/2019/01/16/cordova打包vue项目/">January 16th 2019, 10:28:20 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -421,17 +422,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2019/01/14/边框渐变/" title= "边框渐变色">
-                    <div class="nextTitle">边框渐变色</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/01/03/不要再问我数组操作了/" title= "不要再问我数组操作了">
-                    <div class="prevTitle">不要再问我数组操作了</div>
+                <a href= "/2019/01/14/边框渐变/" title= "边框渐变色">
+                    <div class="prevTitle">边框渐变色</div>
                 </a>
             
         </li>
@@ -550,7 +546,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装sass依赖包"><span class="toc-number">1.</span> <span class="toc-text">安装sass依赖包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置webpack"><span class="toc-number">2.</span> <span class="toc-text">配置webpack</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#写sass"><span class="toc-number">3.</span> <span class="toc-text">写sass</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#打包前准备"><span class="toc-number">1.</span> <span class="toc-text">打包前准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件目录"><span class="toc-number">2.</span> <span class="toc-text">文件目录</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
