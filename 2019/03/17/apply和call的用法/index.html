@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>响应式布局 · Foam&#39;s Studio</title>
+    <title>apply和call的用法 · Foam&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Foam&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">响应式布局</a>
+                <a href="#" class="post-name">apply和call的用法</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            响应式布局
+            apply和call的用法
             <!-- 404 -->
             
         </h1>
@@ -264,20 +264,14 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
-                    <div class= post-intro-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "css">css</a>
-    
-</div>
-                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">32</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">372</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/12/25</span>
+                    <span class="post-intro-time">2019/03/17</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,16 +395,22 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>&#123;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">100px</span> <span class="meta">!important</span>;</span><br><span class="line">    &#125;</span><br><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">1366px</span>) and (max-width: <span class="number">1919px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">html</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">85px</span> <span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.login_box</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">8rem</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="apply和call用来调用对象本不属于他自己的方法"><a href="#apply和call用来调用对象本不属于他自己的方法" class="headerlink" title="apply和call用来调用对象本不属于他自己的方法"></a>apply和call用来调用对象本不属于他自己的方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> chicken = &#123;</span><br><span class="line">    name: <span class="string">"鸡"</span>,</span><br><span class="line">    crow: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"我是"</span> + <span class="keyword">this</span>.name + <span class="string">"，我会喔～喔～～喔～～～"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> duck = &#123;</span><br><span class="line">    name: <span class="string">"鸭"</span>,</span><br><span class="line">    swim: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"我是"</span> + <span class="keyword">this</span>.name + <span class="string">"，我会游"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">chicken.crow(); <span class="comment">// 我是鸡，我会喔～喔～～喔～～～</span></span><br><span class="line">duck.swim(); <span class="comment">// 我是鸭，我会游</span></span><br></pre></td></tr></table></figure>
+<p>鸡会蹄，鸭子会游泳。一天，鸡想去游泳，但是它并不会游，于是它找到了鸭，和鸭学。</p>
+<h3 id="通过apply和call调用"><a href="#通过apply和call调用" class="headerlink" title="通过apply和call调用"></a>通过apply和call调用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">duck.swim.apply(chicken); <span class="comment">// 我是鸡，我会游</span></span><br><span class="line">duck.swim.call(chicken); <span class="comment">// 我是鸡，我会游</span></span><br></pre></td></tr></table></figure>
+<p>于是乎，鸡学会了游泳。但是鸭也想唱歌来增加自己的人气，它让鸡教它。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chicken.crow.apply(duck); <span class="comment">// 我是鸭，我会喔～喔～～喔～～～</span></span><br><span class="line">chicken.crow.call(duck); <span class="comment">// 我是鸡，我会游</span></span><br></pre></td></tr></table></figure></p>
+<p>于是乎，鸭也能在早上叫你起床了。</p>
+<h3 id="总结与区别"><a href="#总结与区别" class="headerlink" title="总结与区别"></a>总结与区别</h3><p>apply和call接收的第一个参数会变成this，谁需要调用不是它的方法，就把它放在参数的第一个位置（需要调取的函数对象）。apply的第二个参数传入的是数组，而call可以传入很多个。再来看个例子:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> peTeacher = &#123;</span><br><span class="line">    name: <span class="string">"peTeacher"</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> mathTeacher = &#123;</span><br><span class="line">    name: <span class="string">"mathTeacher"</span>,</span><br><span class="line">    add: <span class="function"><span class="keyword">function</span>(<span class="params">num1, num2</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"虽然我是"</span>+<span class="keyword">this</span>.name+<span class="string">"但是我知道结果是："</span>)</span><br><span class="line">        <span class="keyword">return</span> num1+num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">mathTeacher.add.apply(peTeacher,[<span class="number">2</span>,<span class="number">3</span>]); <span class="comment">// 虽然我是peTeacher但是我知道结果是： 5</span></span><br><span class="line">mathTeacher.add.call(peTeacher,<span class="number">2</span>,<span class="number">3</span>); <span class="comment">// 虽然我是peTeacher但是我知道结果是： 5</span></span><br></pre></td></tr></table></figure></p>
+<p>嗯嗯～没错，他们的不同点是传入参数的方式不同。</p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://o0foam.github.io">o0foam.</a>
-            <p>原文链接：<a href="https://o0foam.github.io/2018/12/25/响应式布局/">https://o0foam.github.io/2018/12/25/响应式布局/</a>
-            <p>发表日期：<a href="https://o0foam.github.io/2018/12/25/响应式布局/">December 25th 2018, 8:32:06 am</a>
-            <p>更新日期：<a href="https://o0foam.github.io/2018/12/25/响应式布局/">December 25th 2018, 11:20:02 pm</a>
+            <p>原文链接：<a href="https://o0foam.github.io/2019/03/17/apply和call的用法/">https://o0foam.github.io/2019/03/17/apply和call的用法/</a>
+            <p>发表日期：<a href="https://o0foam.github.io/2019/03/17/apply和call的用法/">March 17th 2019, 11:13:22 pm</a>
+            <p>更新日期：<a href="https://o0foam.github.io/2019/03/17/apply和call的用法/">March 26th 2019, 11:01:14 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -418,17 +418,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2018/12/25/css闪烁效果/" title= "css3闪烁效果">
-                    <div class="nextTitle">css3闪烁效果</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2018/12/20/vue2-0同级组件的通信/" title= "vue2.0同级组件的通信方法">
-                    <div class="prevTitle">vue2.0同级组件的通信方法</div>
+                <a href= "/2019/03/04/2019随笔/" title= "2019随笔">
+                    <div class="prevTitle">2019随笔</div>
                 </a>
             
         </li>
@@ -547,7 +542,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#apply和call用来调用对象本不属于他自己的方法"><span class="toc-number">1.</span> <span class="toc-text">apply和call用来调用对象本不属于他自己的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通过apply和call调用"><span class="toc-number">1.1.</span> <span class="toc-text">通过apply和call调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结与区别"><span class="toc-number">1.2.</span> <span class="toc-text">总结与区别</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
