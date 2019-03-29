@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">981</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.1k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -413,9 +413,14 @@ height:50vh;
 <p>其他用途：</p>
 <h3 id="将变量赋值数组时"><a href="#将变量赋值数组时" class="headerlink" title="将变量赋值数组时"></a>将变量赋值数组时</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Arr = [<span class="string">"18岁"</span>, <span class="string">"xgz"</span>, <span class="string">"ball"</span>, <span class="string">"blue"</span>, <span class="string">"red"</span>, <span class="string">"black"</span>, <span class="string">"yellow"</span>];</span><br><span class="line"><span class="keyword">const</span> [age, name, habby, ...color] = Arr;</span><br><span class="line"><span class="built_in">console</span>.log(age, name, habby, color);</span><br></pre></td></tr></table></figure>
 <h3 id="用在可变参数函数"><a href="#用在可变参数函数" class="headerlink" title="用在可变参数函数"></a>用在可变参数函数</h3><p>在没有拓展运算符之前，对于参数不固定的函数都是用参数对象 arguments 进行处理。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">...nums</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> total = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> num <span class="keyword">of</span> nums)&#123;</span><br><span class="line">        total += num;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> total;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="ES6-箭头函数"><a href="#ES6-箭头函数" class="headerlink" title="ES6 箭头函数"></a>ES6 箭头函数</h2><p>一个普通函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> color = [<span class="string">"blue"</span>,<span class="string">"orange"</span>,<span class="string">"red"</span>].map(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> item.toUpperCase();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>以下是箭头函数的写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> color = [<span class="string">"blue"</span>,<span class="string">"orange"</span>,<span class="string">"red"</span>].map( <span class="function"><span class="params">item</span> =&gt;</span>&#123;</span><br><span class="line">    item.toUpperCase</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>未完待续…</p>
+<h2 id="ES6-箭头函数"><a href="#ES6-箭头函数" class="headerlink" title="ES6 箭头函数"></a>ES6 箭头函数</h2><p>一个普通函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> color = [<span class="string">"blue"</span>,<span class="string">"orange"</span>,<span class="string">"red"</span>].map(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> item.toUpperCase();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sum = <span class="function">(<span class="params">num1, num2</span>) =&gt;</span> num1 + num2;</span><br></pre></td></tr></table></figure></p>
+<p>以下是箭头函数的写法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> color = [<span class="string">"blue"</span>,<span class="string">"orange"</span>,<span class="string">"red"</span>].map( <span class="function"><span class="params">item</span> =&gt;</span>&#123;</span><br><span class="line">    item.toUpperCase</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>注：</p>
+<ol>
+<li>箭头函数体内的 this 对象，就是定义时所在的对象，而不是使用时所在的对象。</li>
+<li>不可以 new 命令，即不能当构造函数。</li>
+<li>不可以使用 arguments 对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// this 对象的demo;</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'id:'</span>, <span class="keyword">this</span>.id);</span><br><span class="line">    &#125;, <span class="number">100</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> id = <span class="number">21</span>;</span><br><span class="line">foo.call(&#123; <span class="attr">id</span>: <span class="number">42</span> &#125;);</span><br><span class="line">foo(<span class="string">"haha"</span>)</span><br></pre></td></tr></table></figure></li>
+</ol>
 
     </article>
     <!-- license  -->
@@ -424,7 +429,7 @@ height:50vh;
             <p>原文作者：<a href="https://o0foam.github.io">o0foam.</a>
             <p>原文链接：<a href="https://o0foam.github.io/2019/03/28/ES6 语法整理/">https://o0foam.github.io/2019/03/28/ES6 语法整理/</a>
             <p>发表日期：<a href="https://o0foam.github.io/2019/03/28/ES6 语法整理/">March 28th 2019, 10:28:54 pm</a>
-            <p>更新日期：<a href="https://o0foam.github.io/2019/03/28/ES6 语法整理/">March 28th 2019, 11:32:50 pm</a>
+            <p>更新日期：<a href="https://o0foam.github.io/2019/03/28/ES6 语法整理/">March 29th 2019, 11:42:51 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -569,8 +574,6 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
     
     
     
