@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Foam&#39;s Studio</title>
+    <title>对象操作 · Foam&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Foam&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">对象操作</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Foam's Studio.</a>
 </header>
@@ -227,7 +238,7 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture)"></div>
@@ -236,8 +247,8 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Foam's Studio.
-            <!-- 文章页  -->
+            对象操作
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,49 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                I will break these chains that bind me, happiness will find me.
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">801</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/04/11</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,366 +399,73 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/20/vue2-0同级组件的通信/" >
-            
-                <span>vue2.0同级组件的通信方法</span>
-        </a>
-        <div class="abstract-content">
-            
-
-vue父子组件之间可以通过props和$emit进行通信，但是同级组件的通信会麻烦一点（不用vuex），以下是同级组件的通信方法。
-
-
-目录结构：
-在comunicate.js里面输入12import Vue from "vue";export default new Vue;
-该步骤的目...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="创建对象的方法："><a href="#创建对象的方法：" class="headerlink" title="创建对象的方法："></a>创建对象的方法：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法一：</span></span><br><span class="line"><span class="keyword">const</span> obj1 = &#123;&#125;;</span><br><span class="line"><span class="comment">// 方法二：</span></span><br><span class="line"><span class="keyword">const</span> obj2 = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br></pre></td></tr></table></figure>
+<h2 id="Object-assign"><a href="#Object-assign" class="headerlink" title="Object.assign()"></a>Object.assign()</h2><ol>
+<li><p>用作对象的复制</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> small_obj = &#123; <span class="attr">name</span>: <span class="string">'xgz'</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> big_obj = <span class="built_in">Object</span>.assign(&#123;&#125;, small_obj);</span><br><span class="line"><span class="built_in">console</span>.log(big_obj);</span><br><span class="line"><span class="comment">// &#123; name: 'xgz' &#125;;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">age</span>: <span class="number">18</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> obj2 = &#123; <span class="attr">sex</span>: <span class="string">"boy"</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> obj3 = <span class="built_in">Object</span>.assign(&#123; <span class="attr">name</span>: <span class="string">"xgz"</span> &#125;, obj1, obj2);</span><br><span class="line"><span class="built_in">console</span>.log(obj3);</span><br><span class="line"><span class="comment">// &#123;name: "xgz", age: 18, sex: "boy"&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用作多个对象的合并</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123; <span class="attr">age</span>: <span class="number">18</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> obj2 = &#123; <span class="attr">sex</span>: <span class="string">"boy"</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> obj3 = &#123; <span class="attr">name</span>: <span class="string">"xgz"</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> all_obj = <span class="built_in">Object</span>.assign(obj1, obj2, obj3)</span><br><span class="line"><span class="built_in">console</span>.log(all_obj);</span><br><span class="line"><span class="comment">// &#123;age: 18, sex: "boy", name: "xgz"&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(obj1);</span><br><span class="line"><span class="comment">// &#123;age: 18, sex: "boy", name: "xgz"&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>PS：这里要注意，obj1 的值也会改变。也就是说，放在第一个参数里面的值都会改变</strong></p>
+<h4 id="注意：assign-也有无法合并的时候，如："><a href="#注意：assign-也有无法合并的时候，如：" class="headerlink" title="注意：assign 也有无法合并的时候，如："></a>注意：assign 也有无法合并的时候，如：</h4><ol>
+<li><p>继承属性和不可枚举属性无法拷贝</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = <span class="built_in">Object</span>.create(&#123; <span class="attr">name</span>: <span class="string">"xgz"</span> &#125;,&#123; <span class="comment">// name 是个继承属性</span></span><br><span class="line">    sex: &#123;</span><br><span class="line">        is: <span class="string">"boy"</span> <span class="comment">// sex 是个不可枚举的属性</span></span><br><span class="line">    &#125;,</span><br><span class="line">    age: &#123;</span><br><span class="line">        value: <span class="number">18</span>,</span><br><span class="line">        enumerable: <span class="literal">true</span> <span class="comment">// color 是个自身可枚举属性</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">let</span> copy = <span class="built_in">Object</span>.assign(&#123;&#125;, obj);</span><br><span class="line"><span class="built_in">console</span>.log(copy); <span class="comment">// &#123; age: 18 &#125;</span></span><br><span class="line"><span class="comment">// 当 enumerable 为 true 且有 value 时，才是可枚举对象，如果不是 value 的话 会输出 undefined</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>原型类型会被包装为 object</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">"xgz"</span>;</span><br><span class="line"><span class="keyword">const</span> age = <span class="number">18</span>;</span><br><span class="line"><span class="keyword">const</span> sex = <span class="string">"boy"</span>;</span><br><span class="line"><span class="keyword">const</span> oo = <span class="built_in">Symbol</span>(<span class="string">"foo"</span>);</span><br><span class="line"><span class="keyword">const</span> obj = <span class="built_in">Object</span>.assign(&#123;&#125;, name, <span class="literal">null</span>, age, <span class="literal">undefined</span>, sex, oo);</span><br><span class="line"><span class="comment">// 此时原型类型 null 和 undefined 会被忽略。</span></span><br><span class="line"><span class="comment">// 这里要注意的一点，只有字符串的包装对象才可能有自身可枚举对象</span></span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="comment">// &#123;0: "b", 1: "o", 2: "y"&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>异常会打断接下来的拷贝任务</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> target = <span class="built_in">Object</span>.defineProperty(&#123;&#125;, <span class="string">"foo"</span>, &#123;</span><br><span class="line">    value: <span class="number">1</span>,</span><br><span class="line">    writable: <span class="literal">false</span></span><br><span class="line">&#125;); <span class="comment">// target 的 foo 属性是个只读属性。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.assign(target, &#123;<span class="attr">bar</span>: <span class="number">2</span>&#125;, &#123;<span class="attr">foo2</span>: <span class="number">3</span>, <span class="attr">foo</span>: <span class="number">3</span>, <span class="attr">foo3</span>: <span class="number">3</span>&#125;, &#123;<span class="attr">baz</span>: <span class="number">4</span>&#125;);</span><br><span class="line"><span class="comment">// TypeError: "foo" is read-only</span></span><br><span class="line"><span class="comment">// 注意这个异常是在拷贝第二个源对象的第二个属性时发生的。</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(target.bar);  <span class="comment">// 2，说明第一个源对象拷贝成功了。</span></span><br><span class="line"><span class="built_in">console</span>.log(target.foo2); <span class="comment">// 3，说明第二个源对象的第一个属性也拷贝成功了。</span></span><br><span class="line"><span class="built_in">console</span>.log(target.foo);  <span class="comment">// 1，只读属性不能被覆盖，所以第二个源对象的第二个属性拷贝失败了。</span></span><br><span class="line"><span class="built_in">console</span>.log(target.foo3); <span class="comment">// undefined，异常之后 assign 方法就退出了，第三个属性是不会被拷贝到的。</span></span><br><span class="line"><span class="built_in">console</span>.log(target.baz);  <span class="comment">// undefined，第三个源对象更是不会被拷贝到的。</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Object-create"><a href="#Object-create" class="headerlink" title="Object.create()"></a>Object.create()</h2><h2 id="Object-is"><a href="#Object-is" class="headerlink" title="Object.is()"></a>Object.is()</h2><p>这个是用来判断两个值是否一致,看看以下实例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="string">"test"</span>;</span><br><span class="line"><span class="keyword">const</span> b = <span class="string">"test"</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="string">"testtest"</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="string">'xgz'</span>, <span class="string">'xgz'</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.is(a, b); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.is(a, c); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Object</span>.is([], []); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">null</span>, <span class="literal">null</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">NaN</span>, <span class="literal">NaN</span>);  <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">NaN</span>, <span class="number">0</span>/<span class="number">0</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="Object-keys"><a href="#Object-keys" class="headerlink" title="Object.keys()"></a>Object.keys()</h2><p>这个方法会返回一个由给定对象的自身可枚举属性组成的数组，数组中属性名的排列顺序和使用 for…in 循环遍历该对象时返回的顺序一致。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果是类数组对象</span></span><br><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="number">2</span>:<span class="string">"c"</span>, <span class="number">1</span>:<span class="string">"b"</span>, <span class="number">3</span>:<span class="string">"d"</span>, <span class="number">0</span>:<span class="string">"a"</span> &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(obj1));</span><br><span class="line"><span class="comment">// [ "0", "1", "2", "3" ]</span></span><br><span class="line"><span class="comment">// 如果是普通对象</span></span><br><span class="line"><span class="keyword">const</span> obj2 = &#123; <span class="attr">name</span>:<span class="string">"xgz"</span>, <span class="attr">age</span>: <span class="number">18</span>, <span class="attr">sex</span>: <span class="string">"boy"</span>, <span class="attr">hobby</span>: <span class="string">"badmindom"</span> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(obj2));</span><br><span class="line"><span class="comment">// [ "name", "age", "sex", "happy" ]</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="删除对象中的某个属性和值："><a href="#删除对象中的某个属性和值：" class="headerlink" title="删除对象中的某个属性和值："></a>删除对象中的某个属性和值：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = &#123;</span><br><span class="line">    name: <span class="string">"xgz"</span>,</span><br><span class="line">    sex: <span class="string">"boy"</span>,</span><br><span class="line">    hobby: <span class="string">"badmindom"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">delete</span> person.hobby;</span><br><span class="line"><span class="built_in">console</span>.log(person)</span><br><span class="line"><span class="comment">// &#123; name: "xgz", sex: "boy" &#125;</span></span><br></pre></td></tr></table></figure>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/19/import引入文件方法/" >
-            
-                <span>import引入文件方法</span>
-        </a>
-        <div class="abstract-content">
-            import引入css:1@import url("../static/css/index_section.css");
-import引入noude_modules的插件:1import VueI18n from 'vue-i18n'
-import引入单个对象：（用export defailt...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://o0foam.github.io">o0foam.</a>
+            <p>原文链接：<a href="https://o0foam.github.io/2019/04/11/对象操作/">https://o0foam.github.io/2019/04/11/对象操作/</a>
+            <p>发表日期：<a href="https://o0foam.github.io/2019/04/11/对象操作/">April 11th 2019, 10:49:36 pm</a>
+            <p>更新日期：<a href="https://o0foam.github.io/2019/04/11/对象操作/">April 11th 2019, 11:21:53 pm</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "others">others</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/17/vue组件化开发/" >
-            
-                <span>vue组件化开发</span>
-        </a>
-        <div class="abstract-content">
-            文件目录：其中index.vue为父组件，v-common为子组件记得先配置好路由
-组件引入步骤：1.在父组件的script里面用import引入1import vCommon from "./v-common"
-2.用components注册该组件1components: &#123; vC...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/14/git操作/" >
-            
-                <span>git操作</span>
-        </a>
-        <div class="abstract-content">
-            首次提交1234567git initgit statusgit remote add origin http://192.168.1.227/xgz/bmctrl-en.gitgit add *git statusgit commit-m &apos;首次提交&apos;git push -...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "git">git</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/12/vue添加i18n/" >
-            
-                <span>vue添加i18n</span>
-        </a>
-        <div class="abstract-content">
-            1.首先在vue-cli里面用命令行引入i18n1npm install vue-i18n
-2.新建文件夹lang，然后在里面创建en-US.js、zh-CN.js还有language.js，图片如下3.在main.js里面引入vue-i18n插件1import VueI18n from 'v...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/10/简单vue路由配置/" >
-            
-                <span>简单vue路由配置</span>
-        </a>
-        <div class="abstract-content">
-            vue路由默认为Hash模式，可以在routes上添加一个对象1mode: 'history',
-来去掉‘#’号
-方法11.在components里创建一个名为 testFile.vue 文件2.打开router里面的index.js，用import引入文件(tttFile是一个变量名)1im...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/10/vue-cli2.0搭建过程/" >
-            
-                <span>vue-cli2.0搭建过程</span>
-        </a>
-        <div class="abstract-content">
-            搭建vue环境：1.打开命令行并输入指令1npm install -g vue-cli
-2.进入你的文件夹,继续用命令行输入（注：project-name为项目名称）1vue init webpack project-name
-3.命令行输完后会跳出一些简单的vue配置参数，可以按照以下格式进...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/07/边框透明度问题/" >
-            
-                <span>边框透明度问题</span>
-        </a>
-        <div class="abstract-content">
-            边框也可以制作透明样式，只是要加一个 background-clip: padding-box; 的样式才能实现
-html部分123&lt;div  class="box"&gt; out    &lt;div class="paddingBox"&gt; in &lt;/div&gt;&lt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "css">css</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/2/">&#60; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/Misaka.jpg >
-    <div class="profile-name">Foam.</div>
-    
-    <div class="profile-signature">
-        witness me
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+        </li>
+        <li class="previous">
             
-                <a href="mailto:522653886@qq.com" class="iconfont-archer email" title=email ></a>
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/04/08/字符串操作/" title= "字符串操作">
+                    <div class="prevTitle">字符串操作</div>
+                </a>
             
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
-            
-                <a href="https://github.com/o0foam" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
     
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                  
-                  <img class="profile-qr" src="/assets/example_qr.png" />
-                </span>
-            
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href= https://sanhaoxian.github.io/ target="_black">three</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= https://sanhaoxian.github.io/ target="_black">line</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= https://sanhaoxian.github.io/ target="_black">boy</a>
-                    </span>
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -793,6 +548,24 @@ html部分123&lt;div  class="box"&gt; out    &lt;div class="paddingBox"&gt; in &
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建对象的方法："><span class="toc-number">1.</span> <span class="toc-text">创建对象的方法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-assign"><span class="toc-number">2.</span> <span class="toc-text">Object.assign()</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#注意：assign-也有无法合并的时候，如："><span class="toc-number">2.0.1.</span> <span class="toc-text">注意：assign 也有无法合并的时候，如：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-create"><span class="toc-number">3.</span> <span class="toc-text">Object.create()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-is"><span class="toc-number">4.</span> <span class="toc-text">Object.is()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-keys"><span class="toc-number">5.</span> <span class="toc-text">Object.keys()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除对象中的某个属性和值："><span class="toc-number">6.</span> <span class="toc-text">删除对象中的某个属性和值：</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1397,6 +1170,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
