@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Foam&#39;s Studio</title>
+    <title>原型、原型链、构造函数 · Foam&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Foam&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">原型、原型链、构造函数</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Foam's Studio.</a>
 </header>
@@ -227,7 +238,7 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture)"></div>
@@ -236,8 +247,8 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Foam's Studio.
-            <!-- 文章页  -->
+            原型、原型链、构造函数
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,49 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                I will break these chains that bind me, happiness will find me.
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">407</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/04/14</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,465 +399,60 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/17/实用工具/" >
-            
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
-                
-                <span>实用工具</span>
-        </a>
-        <div class="abstract-content">
-            others
-图片无损压缩
-低多边形制作
-前端搜索引擎
-PS网页版
-生成RESTful Web API文档
-打字练习网站
-PDF转换工具
-GIMP(轻量修图软件)
-热键神器
-Dism++(垃圾清理工具)
-QuickLook(快速预览工具)
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p>Q：如果不使用原型链，我们要创建100个对象，应该如何创建？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,sex</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">teach</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        conosle.log(<span class="string">"我来教你打篮球"</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    teach();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i =<span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> per = <span class="keyword">new</span> Person(<span class="string">'蔡徐坤'</span>, <span class="string">'boy'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>于是乎就有 100 个名字叫“蔡徐坤”的人来教你打篮球。也就是说我们创建了 100 个 Person 对象。其实我们并不需要那么多的“蔡徐坤”，因为这样会占 100 个内存空间，篮球场可没那么大。而且每次都要调用 teach() 函数，由于 teach() 函数都是一样，每个内存空间都有它，这样就会浪费很大的空间。如何避免那么多“蔡徐坤”？我们可以引入原型 <strong>prototype</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,sex</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 给 Person 添加原型</span></span><br><span class="line">Person.prototype.teach = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"我来教你打篮球"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实例化对象</span></span><br><span class="line"><span class="keyword">const</span> cxk = <span class="keyword">new</span> Person(<span class="string">"蔡徐坤"</span>, <span class="string">"男"</span>);</span><br><span class="line">cxk.teach();</span><br><span class="line"><span class="comment">// 我来教你打篮球</span></span><br></pre></td></tr></table></figure></p>
+<p>利用原型 prototype，使 cxk 继承了 Person 的原型方法，减少了内存空间。</p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>理解了原型，那原型链又是什么鬼？我们可以打印看看<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.dir(Person); <span class="comment">// 构造函数</span></span><br><span class="line"><span class="built_in">console</span>.dir(cxk); <span class="comment">// 实例对象</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype === cxk.__proto__);</span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/原型链打印信息1.png" alt="图片alt"><br>从上图可以看出，构造函数 Person() 的 prototype 和 实例对象 cxk 的 <strong>proto</strong> 一模一样，而且它们是相等的。一般来说，先有构造函数再有实例对象，实例对象由构造函数创建，所以实例对象中的 <strong>proto</strong> 原型执行的是构造函数中的原型 protype 。</p>
 
-
-搜图网站
-站酷
-千图网
-觅元素免扣素材
-pixab...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "others">others</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/17/前端知识网页/" >
-            
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
-                
-                <span>前端知识网页</span>
-        </a>
-        <div class="abstract-content">
-            css
-详解css的Flex布局
-CSS 列表项布局技巧
-用 CSS 实现一个宽高等比自适应容器
-css选择器
-sass文档
-随机颜色Javascript
-理解跨域及常用解决方案
-编写可维护的JS
-webpack中文文档
-javascript动画库
-Animate.cssothers
-git简...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://o0foam.github.io">o0foam.</a>
+            <p>原文链接：<a href="https://o0foam.github.io/2019/04/14/原型、原型链、构造函数/">https://o0foam.github.io/2019/04/14/原型、原型链、构造函数/</a>
+            <p>发表日期：<a href="https://o0foam.github.io/2019/04/14/原型、原型链、构造函数/">April 14th 2019, 10:40:19 pm</a>
+            <p>更新日期：<a href="https://o0foam.github.io/2019/04/14/原型、原型链、构造函数/">April 16th 2019, 9:58:37 pm</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "others">others</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/14/vs-code插件整理/" >
-            
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
-                
-                <span>vs-code插件整理</span>
-        </a>
-        <div class="abstract-content">
-            自动匹配tag1Auto Rename Tag
-匹配括号1Bracket Pair Colorizer
-中文语言包1Chinese (Simplified) Language Pack for Visual Studio Code
-吸血鬼主题1Dracula Official
-代码规范1ESL...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "others">others</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/26/颜色收集/" >
-            
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
-                
-                <span>颜色收集</span>
-        </a>
-        <div class="abstract-content">
-            绿色#32596D#007A37#00B050#33AB65#00AEAD#48B5B5#12C6AA#5CD1A6#7DE6C2#95F492
-
-
-红色#AB1149#BD1531#D6497D#E03735#FF6369#F47E88#FF8C8C#FBBDC9
-
-
-橙色#B63424#B...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "others">others</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/01/03/不要再问我数组操作了/" >
-            
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
-                
-                <span>不要再问我数组操作了</span>
-        </a>
-        <div class="abstract-content">
-            
-源代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/06/markdown语法 /" >
-            
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
-                
-                <span>markdown语法</span>
-        </a>
-        <div class="abstract-content">
-            123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263# 这是一级标题## 这是二级标题### 这是三级标题###...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "others">others</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/04/14/apply和call的用法/" >
-            
-                <span>bind、apply和call的用法</span>
-        </a>
-        <div class="abstract-content">
-            apply 和call 用来调用对象本不属于他自己的方法1234567891011121314let chicken = &#123;    name: "鸡",    crow: function()&#123;        console.log("我是" + this.name + "...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/14</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/04/14/原型、原型链、构造函数/" >
-            
-                <span>原型、原型链、构造函数</span>
-        </a>
-        <div class="abstract-content">
-            原型Q：如果不使用原型链，我们要创建100个对象，应该如何创建？1234567891011function Person(name,sex) &#123;    this.name = name;    this.sex = sex;    function teach()&#123;    ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/04/11/对象操作/" >
-            
-                <span>对象操作</span>
-        </a>
-        <div class="abstract-content">
-            创建对象的方法：1234// 方法一：const obj1 = &#123;&#125;;// 方法二：const obj2 = new Object();
-Object.assign()
-用作对象的复制
-12345678910const small_obj = &#123; name: 'x...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/04/08/字符串操作/" >
-            
-                <span>字符串操作</span>
-        </a>
-        <div class="abstract-content">
-            
-toString():
-12const num = 18;const str = num.toString;
-
-String():
-12const num = 18;const str = String(num);
-
-
-字符串分割split:1234567const str = "I,wan...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">NEXT &#62;</a>
-    </nav>
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/Misaka.jpg >
-    <div class="profile-name">Foam.</div>
-    
-    <div class="profile-signature">
-        witness me
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/04/14/apply和call的用法/" title= "bind、apply和call的用法">
+                    <div class="nextTitle">bind、apply和call的用法</div>
+                </a>
             
-                <a href="mailto:522653886@qq.com" class="iconfont-archer email" title=email ></a>
+        </li>
+        <li class="previous">
             
-        
-    
-        
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/04/11/对象操作/" title= "对象操作">
+                    <div class="prevTitle">对象操作</div>
+                </a>
             
-                <a href="https://github.com/o0foam" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                  
-                  <img class="profile-qr" src="/assets/example_qr.png" />
-                </span>
-            
-        
     
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href= https://sanhaoxian.github.io/ target="_black">three</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= https://sanhaoxian.github.io/ target="_black">line</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= https://sanhaoxian.github.io/ target="_black">boy</a>
-                    </span>
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -892,6 +535,24 @@ String():
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#原型"><span class="toc-number">1.</span> <span class="toc-text">原型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原型链"><span class="toc-number">2.</span> <span class="toc-text">原型链</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1558,6 +1219,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
