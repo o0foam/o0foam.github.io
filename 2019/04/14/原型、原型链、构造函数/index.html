@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">407</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">755</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -401,11 +401,17 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p>Q：如果不使用原型链，我们要创建100个对象，应该如何创建？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,sex</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">teach</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        conosle.log(<span class="string">"我来教你打篮球"</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    teach();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i =<span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> per = <span class="keyword">new</span> Person(<span class="string">'蔡徐坤'</span>, <span class="string">'boy'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>于是乎就有 100 个名字叫“蔡徐坤”的人来教你打篮球。也就是说我们创建了 100 个 Person 对象。其实我们并不需要那么多的“蔡徐坤”，因为这样会占 100 个内存空间，篮球场可没那么大。而且每次都要调用 teach() 函数，由于 teach() 函数都是一样，每个内存空间都有它，这样就会浪费很大的空间。如何避免那么多“蔡徐坤”？我们可以引入原型 <strong>prototype</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,sex</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 给 Person 添加原型</span></span><br><span class="line">Person.prototype.teach = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"我来教你打篮球"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实例化对象</span></span><br><span class="line"><span class="keyword">const</span> cxk = <span class="keyword">new</span> Person(<span class="string">"蔡徐坤"</span>, <span class="string">"男"</span>);</span><br><span class="line">cxk.teach();</span><br><span class="line"><span class="comment">// 我来教你打篮球</span></span><br></pre></td></tr></table></figure></p>
+        <p>Q：如果不使用原型链，我们要创建100个对象，应该如何创建？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,sex</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">teach</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"我是"</span>+ name +<span class="string">"我来教你打篮球"</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    teach();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i =<span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> per = <span class="keyword">new</span> Person(<span class="string">'蔡徐坤'</span>, <span class="string">'boy'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>于是乎就有 100 个名字叫“蔡徐坤”的人来教你打篮球。也就是说我们创建了 100 个 Person 对象。其实我们并不需要那么多的“蔡徐坤”，因为这样会占 100 个内存空间，篮球场可没那么大。而且每次都要调用 teach() 函数，由于 teach() 函数都是一样的，每个内存空间都有它，这样就会浪费很大的空间。如何避免那么多“蔡徐坤”？我们可以引入原型 <strong>prototype</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,sex</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 给 Person 添加原型</span></span><br><span class="line">Person.prototype.teach = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"我是"</span>+<span class="keyword">this</span>.name+<span class="string">",我来教你打篮球"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实例化对象</span></span><br><span class="line"><span class="keyword">const</span> cxk = <span class="keyword">new</span> Person(<span class="string">"蔡徐坤"</span>, <span class="string">"男"</span>);</span><br><span class="line">cxk.teach();</span><br><span class="line"><span class="comment">// 我是蔡徐坤,我来教你打篮球</span></span><br></pre></td></tr></table></figure></p>
 <p>利用原型 prototype，使 cxk 继承了 Person 的原型方法，减少了内存空间。</p>
-<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>理解了原型，那原型链又是什么鬼？我们可以打印看看<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.dir(Person); <span class="comment">// 构造函数</span></span><br><span class="line"><span class="built_in">console</span>.dir(cxk); <span class="comment">// 实例对象</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype === cxk.__proto__);</span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
-<p><img src="/img/原型链打印信息1.png" alt="图片alt"><br>从上图可以看出，构造函数 Person() 的 prototype 和 实例对象 cxk 的 <strong>proto</strong> 一模一样，而且它们是相等的。一般来说，先有构造函数再有实例对象，实例对象由构造函数创建，所以实例对象中的 <strong>proto</strong> 原型执行的是构造函数中的原型 protype 。</p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>理解了原型，那原型链又是什么鬼？我们可以打印看看<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.dir(Person); <span class="comment">// 构造函数</span></span><br><span class="line"><span class="built_in">console</span>.dir(cxk); <span class="comment">// 实例对象</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype === cxk.__proto__);</span><br><span class="line"><span class="comment">// true</span></span><br><span class="line"><span class="comment">// Person.prototype 是原型对象</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/原型链打印信息1.png" alt="原型链打印信息1"><br>从打印出来的信息和上图可以看出，构造函数 Person() 的 prototype 和 实例对象 cxk 的 <strong>proto</strong> 一模一样，而且它们是相等的。一般来说，先有构造函数再有实例对象，实例对象由构造函数创建，所以实例对象中的 <strong>proto</strong> 原型指向的是构造函数中的原型 protype 。<br>实例对象中的 <strong>proto</strong> 是原型，浏览器使用的，而构造函数中的 prototype 是原型，程序员使用的。以下是原型、原型链、构造函数的关系图：<br><img src="/img/图解原型链.png" alt="图解原型链"><br>从图片可以看出，</p>
+<ul>
+<li>构造函数中 prototype 属性指向自己的原型对象 <strong>（Person.prototype === Person.prototype）</strong>；</li>
+<li>原型对象中的 constructor 构造器指向原型对象所在的构造函数 <strong>(Person.prototype.constructor === Person)</strong>；</li>
+<li>实例对象(cxk)的 <strong>proto</strong> 指向是它所在的构造函数中的 prototype 属性所指向的原型对象。 <strong>（cxk.<strong>proto</strong> === Person.prototype）</strong></li>
+<li>实例（cxk）对象可以通过 <strong>proto</strong> 来获取原型对象（Person.prototype）中的属性，<br>从 <strong>cxk.teach();</strong> 可以成功打印出“我来教你打篮球”可以看出，实例对象可以直接访问原型对象中的属性和方法。<br>因此我们可以总结得出：<br><strong>原型链是一种关系，实例对象和原型对象之间的关系，关系是通过原型 <strong>proto</strong> 来联系。</strong><h2 id="原型指向改变后是如何添加方法和属性"><a href="#原型指向改变后是如何添加方法和属性" class="headerlink" title="原型指向改变后是如何添加方法和属性"></a>原型指向改变后是如何添加方法和属性</h2>原型改变添加方法无非就是两种：<br>1.在原型<strong>改变前</strong>添加方法<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, sex</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.sex = sex;</span><br><span class="line">&#125;</span><br><span class="line">Person.portotype.teach = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"我来教你打篮球"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Basketball</span>(<span class="params">color, shape</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
     </article>
     <!-- license  -->
@@ -414,7 +420,7 @@ height:50vh;
             <p>原文作者：<a href="https://o0foam.github.io">o0foam.</a>
             <p>原文链接：<a href="https://o0foam.github.io/2019/04/14/原型、原型链、构造函数/">https://o0foam.github.io/2019/04/14/原型、原型链、构造函数/</a>
             <p>发表日期：<a href="https://o0foam.github.io/2019/04/14/原型、原型链、构造函数/">April 14th 2019, 10:40:19 pm</a>
-            <p>更新日期：<a href="https://o0foam.github.io/2019/04/14/原型、原型链、构造函数/">April 16th 2019, 9:58:37 pm</a>
+            <p>更新日期：<a href="https://o0foam.github.io/2019/04/14/原型、原型链、构造函数/">April 17th 2019, 9:55:33 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -551,7 +557,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#原型"><span class="toc-number">1.</span> <span class="toc-text">原型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原型链"><span class="toc-number">2.</span> <span class="toc-text">原型链</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#原型链"><span class="toc-number">1.</span> <span class="toc-text">原型链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原型指向改变后是如何添加方法和属性"><span class="toc-number">2.</span> <span class="toc-text">原型指向改变后是如何添加方法和属性</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -564,26 +570,6 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
