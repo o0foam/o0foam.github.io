@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>Foam&#39;s Studio</title>
+    <title>浅拷贝&amp;深拷贝 · Foam&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Foam&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">浅拷贝&深拷贝</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Foam's Studio.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            浅拷贝&深拷贝
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">320</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/04/28</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,262 +399,51 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/17/vue组件化开发/" >
-            
-                <span>vue组件化开发</span>
-        </a>
-        <div class="abstract-content">
-            文件目录：其中index.vue为父组件，v-common为子组件记得先配置好路由
-组件引入步骤：1.在父组件的script里面用import引入1import vCommon from "./v-common"
-2.用components注册该组件1components: &#123; vC...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><p>数据的赋值有两种情况，一种是值复制，一种是引用类型赋值 (Object、Array)。深拷贝与浅拷贝的出现，就与这两个数据类型有关。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 值复制</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> b = a;</span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(b) <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 引用类型的赋值</span></span><br><span class="line"><span class="comment">// Object 数据类型赋值</span></span><br><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> obj2 = obj1;</span><br><span class="line"><span class="built_in">console</span>.log(obj1.a, obj2.a); <span class="comment">// 1 1</span></span><br><span class="line"><span class="built_in">console</span>.log(obj1 === obj2); <span class="comment">// true</span></span><br><span class="line">obj1.a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj1.a, obj2.a) <span class="comment">// 2 2</span></span><br><span class="line"><span class="built_in">console</span>.log(obj1 === obj2); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Array 数据类型赋值</span></span><br><span class="line"><span class="keyword">const</span> arr1 = [ <span class="number">1</span>, <span class="number">2</span>, [ <span class="number">3</span>, <span class="number">4</span>] ];</span><br><span class="line"><span class="keyword">const</span> arr2 = arr1;</span><br><span class="line"><span class="built_in">console</span>.log(arr2); <span class="comment">// [ 1, 2, [ 3, 4] ];</span></span><br><span class="line">arr1[<span class="number">2</span>][<span class="number">1</span>] = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr1, arr2); <span class="comment">// [ 1, 2, [ 3, 5] ], [ 1, 2, [ 3, 5] ];;</span></span><br><span class="line"><span class="built_in">console</span>.log(arr1 === arr2); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p>一般我们利用的 = 赋值只是单纯的引用赋值。因为 bj1 和 obj2 的指针都是指向同一内存地址，所以当 obj1.a 改变时，obj2.a 也会跟着改变。同理，arr1 和 arr2 也一样</p>
+<h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><p>创建一个新的对象，把原有的对象属性值，完整地拷贝过来。其中包括了原始类型的值，还有引用类型的内存地址。</p>
+<h4 id="可以通过-Object-assign-来进行浅拷贝。"><a href="#可以通过-Object-assign-来进行浅拷贝。" class="headerlink" title="可以通过 Object.assign 来进行浅拷贝。"></a>可以通过 Object.assign 来进行浅拷贝。</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">a</span>:<span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> obj2 = <span class="built_in">Object</span>.assign(&#123;&#125;, obj1);</span><br><span class="line"><span class="built_in">console</span>.log(obj2) <span class="comment">// &#123;a: 1&#125;</span></span><br><span class="line">obj1.a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj1) <span class="comment">// &#123;a: 2&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(obj2) <span class="comment">// &#123;a: 1&#125;</span></span><br></pre></td></tr></table></figure>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/14/git操作/" >
-            
-                <span>git操作</span>
-        </a>
-        <div class="abstract-content">
-            首次提交1234567git initgit statusgit remote add origin http://192.168.1.227/xgz/bmctrl-en.gitgit add *git statusgit commit-m &apos;首次提交&apos;git push -...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://o0foam.github.io">o0foam.</a>
+            <p>原文链接：<a href="https://o0foam.github.io/2019/04/28/浅拷贝&深拷贝/">https://o0foam.github.io/2019/04/28/浅拷贝&深拷贝/</a>
+            <p>发表日期：<a href="https://o0foam.github.io/2019/04/28/浅拷贝&深拷贝/">April 28th 2019, 9:51:08 pm</a>
+            <p>更新日期：<a href="https://o0foam.github.io/2019/04/28/浅拷贝&深拷贝/">April 28th 2019, 10:51:34 pm</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "git">git</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/14/vs-code插件整理/" >
-            
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
-                
-                <span>vs-code插件整理</span>
-        </a>
-        <div class="abstract-content">
-            自动匹配tag1Auto Rename Tag
-匹配括号1Bracket Pair Colorizer
-中文语言包1Chinese (Simplified) Language Pack for Visual Studio Code
-吸血鬼主题1Dracula Official
-代码规范1ESL...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "others">others</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/12/vue添加i18n/" >
-            
-                <span>vue添加i18n</span>
-        </a>
-        <div class="abstract-content">
-            1.首先在vue-cli里面用命令行引入i18n1npm install vue-i18n
-2.新建文件夹lang，然后在里面创建en-US.js、zh-CN.js还有language.js，图片如下3.在main.js里面引入vue-i18n插件1import VueI18n from 'v...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/10/简单vue路由配置/" >
-            
-                <span>简单vue路由配置</span>
-        </a>
-        <div class="abstract-content">
-            vue路由默认为Hash模式，可以在routes上添加一个对象1mode: 'history',
-来去掉‘#’号
-方法11.在components里创建一个名为 testFile.vue 文件2.打开router里面的index.js，用import引入文件(tttFile是一个变量名)1im...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/10/vue-cli2.0搭建过程/" >
-            
-                <span>vue-cli2.0搭建过程</span>
-        </a>
-        <div class="abstract-content">
-            搭建vue环境：1.打开命令行并输入指令1npm install -g vue-cli
-2.进入你的文件夹,继续用命令行输入（注：project-name为项目名称）1vue init webpack project-name
-3.命令行输完后会跳出一些简单的vue配置参数，可以按照以下格式进...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/07/边框透明度问题/" >
-            
-                <span>边框透明度问题</span>
-        </a>
-        <div class="abstract-content">
-            边框也可以制作透明样式，只是要加一个 background-clip: padding-box; 的样式才能实现
-html部分123&lt;div  class="box"&gt; out    &lt;div class="paddingBox"&gt; in &lt;/div&gt;&lt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "css">css</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/06/markdown语法 /" >
-            
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
-                
-                <span>markdown语法</span>
-        </a>
-        <div class="abstract-content">
-            123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263# 这是一级标题## 这是二级标题### 这是三级标题###...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "others">others</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/04/16/原型、原型链、构造函数/" title= "原型、原型链、构造函数">
+                    <div class="prevTitle">原型、原型链、构造函数</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2018/">&#60; PREV</a><a class="page-number" href="/archives/2018/">1</a><span class="page-number current">2</span>
-    </nav>
     
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -678,6 +528,24 @@ html部分123&lt;div  class="box"&gt; out    &lt;div class="paddingBox"&gt; in &
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#赋值"><span class="toc-number">1.</span> <span class="toc-text">赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浅拷贝"><span class="toc-number">2.</span> <span class="toc-text">浅拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#可以通过-Object-assign-来进行浅拷贝。"><span class="toc-number">2.0.1.</span> <span class="toc-text">可以通过 Object.assign 来进行浅拷贝。</span></a></li></ol></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1352,6 +1220,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
