@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">542</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">808</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -414,6 +414,13 @@ height:50vh;
 <p>但是问题又来了，假如 type 里面又有其他的嵌套属性，那我们又要怎么做？总不能 <strong>拓展运算符PlusPlus</strong> 吧！<br>这个时候，我们可以用 JSON.parse(JSON.stringify(obj))</p>
 <h2 id="JSON-parse-JSON-stringify-obj"><a href="#JSON-parse-JSON-stringify-obj" class="headerlink" title="JSON.parse(JSON.stringify(obj))"></a>JSON.parse(JSON.stringify(obj))</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    name: <span class="string">"cxk"</span>,</span><br><span class="line">    sex: <span class="string">"boy"</span>,</span><br><span class="line">    hobby: &#123;</span><br><span class="line">        type: <span class="string">"sing"</span>,</span><br><span class="line">        grade: <span class="string">"great"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> cxk = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj));</span><br><span class="line">cxk.hobby.type = <span class="string">"basketball"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj.hobby.type) <span class="comment">// sing</span></span><br><span class="line"><span class="built_in">console</span>.log(cxk.hobby.type) <span class="comment">// basketball</span></span><br></pre></td></tr></table></figure>
 <p>问题解决(我就不详细演示啦~)</p>
+<h1 id="数组的拷贝"><a href="#数组的拷贝" class="headerlink" title="数组的拷贝"></a>数组的拷贝</h1><p>数组的拷贝逻辑其实和对象的拷贝逻辑是相似的，因为数组的底层也是对象。</p>
+<h2 id="拓展运算符"><a href="#拓展运算符" class="headerlink" title="拓展运算符"></a>拓展运算符</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> arr2 = [...arr1];</span><br><span class="line">arr1[<span class="number">0</span>] = <span class="number">4</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr1[<span class="number">0</span>]); <span class="comment">// 4</span></span><br><span class="line"><span class="built_in">console</span>.log(arr2[<span class="number">0</span>]); <span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 如果直接赋值，那 arr[2] 也会等于4</span></span><br></pre></td></tr></table></figure>
+<h2 id="Array-function-map-、filter、-reduce"><a href="#Array-function-map-、filter、-reduce" class="headerlink" title="Array function - map 、filter、 reduce"></a>Array function - map 、filter、 reduce</h2><p>这些方法会返回一个新数组，其中包含原始数组的所有（或某些）值。另外，你还可以在里面修改值。</p>
+<h3 id="Array-map"><a href="#Array-map" class="headerlink" title="Array.map"></a>Array.map</h3><h4 id="不修改值"><a href="#不修改值" class="headerlink" title="不修改值"></a>不修改值</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> arr2 = arr1.map(<span class="function"><span class="params">item</span>=&gt;</span>item);</span><br><span class="line">arr2[<span class="number">0</span>] = <span class="number">4</span></span><br><span class="line"><span class="built_in">console</span>.log(arr2[<span class="number">0</span>]); <span class="comment">//4</span></span><br><span class="line"><span class="built_in">console</span>.log(arr1[<span class="number">0</span>]); <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+<h4 id="修改值"><a href="#修改值" class="headerlink" title="修改值"></a>修改值</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = arr1.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> index === <span class="number">1</span> ? <span class="number">4</span> : item)</span><br><span class="line"><span class="built_in">console</span>.log(arr2[<span class="number">0</span>]); <span class="comment">// 4</span></span><br><span class="line"><span class="built_in">console</span>.log(arr1[<span class="number">0</span>]); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<h3 id="Array-slice"><a href="#Array-slice" class="headerlink" title="Array.slice"></a>Array.slice</h3><p>此方法通常用于返回元素的子集，从特定索引开始，并可选择在原始数组的特定索引处结束。使用array.slice（）或array.slice（0）时，最终会得到原始数组的副本。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> arr2 = arr1.slice(<span class="number">0</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr2)</span><br><span class="line"><span class="comment">// b[0] = 4;</span></span><br><span class="line"><span class="built_in">console</span>.log(arr2[<span class="number">0</span>]) <span class="comment">// 4</span></span><br><span class="line"><span class="built_in">console</span>.log(arr1[<span class="number">0</span>]) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></p>
+<p><a href="https://medium.freecodecamp.org/copying-stuff-in-javascript-how-to-differentiate-between-deep-and-shallow-copies-b6d8c1ef09cd" target="_blank" rel="noopener">参考资料</a></p>
 
     </article>
     <!-- license  -->
@@ -422,7 +429,7 @@ height:50vh;
             <p>原文作者：<a href="https://o0foam.github.io">o0foam.</a>
             <p>原文链接：<a href="https://o0foam.github.io/2019/04/28/浅拷贝&深拷贝/">https://o0foam.github.io/2019/04/28/浅拷贝&深拷贝/</a>
             <p>发表日期：<a href="https://o0foam.github.io/2019/04/28/浅拷贝&深拷贝/">April 28th 2019, 9:51:08 pm</a>
-            <p>更新日期：<a href="https://o0foam.github.io/2019/04/28/浅拷贝&深拷贝/">May 5th 2019, 9:59:18 pm</a>
+            <p>更新日期：<a href="https://o0foam.github.io/2019/04/28/浅拷贝&深拷贝/">May 5th 2019, 10:57:45 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -554,7 +561,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#赋值"><span class="toc-number">1.</span> <span class="toc-text">赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#值赋值"><span class="toc-number">1.1.</span> <span class="toc-text">值赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用类型赋值"><span class="toc-number">1.2.</span> <span class="toc-text">引用类型赋值</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#浅拷贝"><span class="toc-number">2.</span> <span class="toc-text">浅拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法1，拓展运算符："><span class="toc-number">2.1.</span> <span class="toc-text">方法1，拓展运算符：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法2-Object-assgin"><span class="toc-number">2.2.</span> <span class="toc-text">方法2,Object.assgin:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#深拷贝"><span class="toc-number">3.</span> <span class="toc-text">深拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#拓展运算符Plus："><span class="toc-number">3.1.</span> <span class="toc-text">拓展运算符Plus：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-parse-JSON-stringify-obj"><span class="toc-number">3.2.</span> <span class="toc-text">JSON.parse(JSON.stringify(obj))</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#赋值"><span class="toc-number">1.</span> <span class="toc-text">赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#值赋值"><span class="toc-number">1.1.</span> <span class="toc-text">值赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用类型赋值"><span class="toc-number">1.2.</span> <span class="toc-text">引用类型赋值</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#浅拷贝"><span class="toc-number">2.</span> <span class="toc-text">浅拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法1，拓展运算符："><span class="toc-number">2.1.</span> <span class="toc-text">方法1，拓展运算符：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法2-Object-assgin"><span class="toc-number">2.2.</span> <span class="toc-text">方法2,Object.assgin:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#深拷贝"><span class="toc-number">3.</span> <span class="toc-text">深拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#拓展运算符Plus："><span class="toc-number">3.1.</span> <span class="toc-text">拓展运算符Plus：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-parse-JSON-stringify-obj"><span class="toc-number">3.2.</span> <span class="toc-text">JSON.parse(JSON.stringify(obj))</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数组的拷贝"><span class="toc-number">4.</span> <span class="toc-text">数组的拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#拓展运算符"><span class="toc-number">4.1.</span> <span class="toc-text">拓展运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Array-function-map-、filter、-reduce"><span class="toc-number">4.2.</span> <span class="toc-text">Array function - map 、filter、 reduce</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Array-map"><span class="toc-number">4.2.1.</span> <span class="toc-text">Array.map</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#不修改值"><span class="toc-number">4.2.1.1.</span> <span class="toc-text">不修改值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改值"><span class="toc-number">4.2.1.2.</span> <span class="toc-text">修改值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Array-slice"><span class="toc-number">4.2.2.</span> <span class="toc-text">Array.slice</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -567,6 +574,8 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
     
     
     
@@ -1088,12 +1097,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2018/12/25/响应式布局/" >响应式布局</a>
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2018/12/25/css闪烁效果/" >css3闪烁效果</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2018/12/25/css闪烁效果/" >css3闪烁效果</a>
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2018/12/25/响应式布局/" >响应式布局</a>
         </li>
     
     
@@ -1138,12 +1147,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2018/12/10/简单vue路由配置/" >简单vue路由配置</a>
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2018/12/10/vue-cli2.0搭建过程/" >vue-cli2.0搭建过程</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2018/12/10/vue-cli2.0搭建过程/" >vue-cli2.0搭建过程</a>
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2018/12/10/简单vue路由配置/" >简单vue路由配置</a>
         </li>
     
     
