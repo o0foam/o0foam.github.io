@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">364</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">509</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -401,11 +401,19 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><p>数据的赋值有两种情况，一种是值复制，一种是引用类型赋值 (Object、Array)。深拷贝与浅拷贝的出现，就与这两个数据类型有关。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 值复制</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> b = a;</span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(b) <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 引用类型的赋值</span></span><br><span class="line"><span class="comment">// Object 数据类型赋值</span></span><br><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> obj2 = obj1;</span><br><span class="line"><span class="built_in">console</span>.log(obj1.a, obj2.a); <span class="comment">// 1 1</span></span><br><span class="line"><span class="built_in">console</span>.log(obj1 === obj2); <span class="comment">// true</span></span><br><span class="line">obj1.a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj1.a, obj2.a) <span class="comment">// 2 2</span></span><br><span class="line"><span class="built_in">console</span>.log(obj1 === obj2); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Array 数据类型赋值</span></span><br><span class="line"><span class="keyword">const</span> arr1 = [ <span class="number">1</span>, <span class="number">2</span>, [ <span class="number">3</span>, <span class="number">4</span>] ];</span><br><span class="line"><span class="keyword">const</span> arr2 = arr1;</span><br><span class="line"><span class="built_in">console</span>.log(arr2); <span class="comment">// [ 1, 2, [ 3, 4] ];</span></span><br><span class="line">arr1[<span class="number">2</span>][<span class="number">1</span>] = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr1, arr2); <span class="comment">// [ 1, 2, [ 3, 5] ], [ 1, 2, [ 3, 5] ];;</span></span><br><span class="line"><span class="built_in">console</span>.log(arr1 === arr2); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
-<p>一般我们利用的 = 赋值只是单纯的引用赋值。因为 bj1 和 obj2 的指针都是指向同一内存地址，所以当 obj1.a 改变时，obj2.a 也会跟着改变。同理，arr1 和 arr2 也一样</p>
-<h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><p>创建一个新的对象，把原有的对象属性值，完整地拷贝过来。其中包括了原始类型的值，还有引用类型的内存地址。</p>
-<h4 id="可以通过-Object-assign-来进行浅拷贝。"><a href="#可以通过-Object-assign-来进行浅拷贝。" class="headerlink" title="可以通过 Object.assign 来进行浅拷贝。"></a>可以通过 Object.assign 来进行浅拷贝。</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj1 = &#123; <span class="attr">a</span>:<span class="number">1</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> obj2 = <span class="built_in">Object</span>.assign(&#123;&#125;, obj1);</span><br><span class="line"><span class="built_in">console</span>.log(obj2) <span class="comment">// &#123;a: 1&#125;</span></span><br><span class="line">obj1.a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj1) <span class="comment">// &#123;a: 2&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(obj2) <span class="comment">// &#123;a: 1&#125;</span></span><br></pre></td></tr></table></figure>
-<p>我们达到了改变 obj1.a ，但 obj2.a 不变的目的。但这样写还是会有不足，比如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [&#123;<span class="attr">a</span>:<span class="number">1</span>, <span class="attr">b</span>:<span class="number">2</span>&#125;, &#123;<span class="attr">a</span>:<span class="number">3</span>, <span class="attr">b</span>:<span class="number">4</span>&#125;];</span><br><span class="line"><span class="keyword">const</span></span><br></pre></td></tr></table></figure></p>
+        <h1 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h1><p>数据的赋值有两种情况，一种是值赋值，一种是引用类型赋值( Object、Array )。</p>
+<h2 id="值赋值"><a href="#值赋值" class="headerlink" title="值赋值"></a>值赋值</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> b = a;</span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a) <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(b) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>通过 b = a，完成了拷贝，而且改变 a 的值，b 的值也不受影响。</p>
+<h2 id="引用类型赋值"><a href="#引用类型赋值" class="headerlink" title="引用类型赋值"></a>引用类型赋值</h2><p>引用类型和值不一样，引用类型在实例化的时候只储存一次，并且分配给变量的是一个指针（引用、地址线路）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    name: <span class="string">"cxk"</span>,</span><br><span class="line">    sex: <span class="string">"boy"</span>,</span><br><span class="line">    hobby: <span class="string">"sing"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> cxk = obj;</span><br><span class="line">cxk.hobby = <span class="string">"basketball"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(cxk.hobby); <span class="comment">// basketball</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.hobby); <span class="comment">// basketball</span></span><br></pre></td></tr></table></figure></p>
+<p>额？因为 cxk 的 hobby 变成了 basketball，这没有问题，但是我们会发现，obj 的hobby 也变成了 basketball ！！！这就是浅拷贝。当然，这是可以解决的。</p>
+<h1 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h1><h2 id="方法1，拓展运算符："><a href="#方法1，拓展运算符：" class="headerlink" title="方法1，拓展运算符："></a>方法1，拓展运算符：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    name: <span class="string">"cxk"</span>,</span><br><span class="line">    sex: <span class="string">"boy"</span>,</span><br><span class="line">    hobby: <span class="string">"sing"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> cxk = &#123;...obj&#125;;</span><br><span class="line">cxk.hobby = <span class="string">"basketball"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(cxk.hobby); <span class="comment">// basketball</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.hobby); <span class="comment">// sing</span></span><br><span class="line"><span class="comment">// 另外，拓展运算符也可以合并两个对象</span></span><br><span class="line"><span class="keyword">let</span> obj2 = &#123;</span><br><span class="line">    age:<span class="number">18</span>,</span><br><span class="line">    eat: <span class="string">"rice"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> cxk_brother = &#123;...obj,...obj2&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(cxk_brother); <span class="comment">// &#123;name: "cxk", sex: "boy", hobby: "sing", age: 18, eat: "rice"&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法2,Object.assgin:</span></span><br></pre></td></tr></table></figure>
+<h2 id="方法2-Object-assgin"><a href="#方法2-Object-assgin" class="headerlink" title="方法2,Object.assgin:"></a>方法2,Object.assgin:</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    name: <span class="string">"cxk"</span>,</span><br><span class="line">    sex: <span class="string">"boy"</span>,</span><br><span class="line">    hobby: <span class="string">"sing"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> cxk = <span class="built_in">Object</span>.assign(&#123;&#125;,obj)</span><br><span class="line">cxk.hobby = <span class="string">"basketball"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(cxk.hobby); <span class="comment">// basketball</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.hobby); <span class="comment">// sing</span></span><br></pre></td></tr></table></figure>
+<h1 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    name: <span class="string">"cxk"</span>,</span><br><span class="line">    sex: <span class="string">"boy"</span>,</span><br><span class="line">    hobby: &#123;</span><br><span class="line">        type: <span class="string">"sing"</span>,</span><br><span class="line">        grade: <span class="string">"great"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> cxk = &#123;...obj&#125;;</span><br><span class="line">cxk.hobby.type = <span class="string">"basketball"</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.hobby.type) <span class="comment">// basketball</span></span><br><span class="line"><span class="built_in">console</span>.log(cxk.hobby.type) <span class="comment">// basketball</span></span><br><span class="line"><span class="comment">// 剩下的别试了，Object.assign 也木有用的</span></span><br></pre></td></tr></table></figure>
+<p>oh! no! 我们拷贝的又只是一个指针！此时，深拷贝的作用就来了！！</p>
+<h2 id="拓展运算符Plus："><a href="#拓展运算符Plus：" class="headerlink" title="拓展运算符Plus："></a>拓展运算符Plus：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    name: <span class="string">"cxk"</span>,</span><br><span class="line">    sex: <span class="string">"boy"</span>,</span><br><span class="line">    hobby: &#123;</span><br><span class="line">        type: <span class="string">"sing"</span>,</span><br><span class="line">        grade: <span class="string">"great"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> cxk = &#123;</span><br><span class="line">    ...obj,</span><br><span class="line">    hobby: &#123; ...obj.hobby &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">cxk.hobby.type = <span class="string">"basketball"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj.hobby.type) <span class="comment">// sing</span></span><br><span class="line"><span class="built_in">console</span>.log(cxk.hobby.type) <span class="comment">// basketball</span></span><br></pre></td></tr></table></figure>
+<p>但是问题又来了，假如 type 里面又有其他的嵌套属性，那我们又要怎么做？</p>
+<h2 id="JSON-parse-JSON-stringify"><a href="#JSON-parse-JSON-stringify" class="headerlink" title="JSON.parse(JSON.stringify())"></a>JSON.parse(JSON.stringify())</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    name: <span class="string">"cxk"</span>,</span><br><span class="line">    sex: <span class="string">"boy"</span>,</span><br><span class="line">    hobby: &#123;</span><br><span class="line">        type: <span class="string">"sing"</span>,</span><br><span class="line">        grade: <span class="string">"great"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> cxk = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj));</span><br><span class="line">cxk.hobby.type = <span class="string">"basketball"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj.hobby.type) <span class="comment">// sing</span></span><br><span class="line"><span class="built_in">console</span>.log(cxk.hobby.type) <span class="comment">// basketball</span></span><br></pre></td></tr></table></figure>
+<p>问题解决</p>
 
     </article>
     <!-- license  -->
@@ -414,7 +422,7 @@ height:50vh;
             <p>原文作者：<a href="https://o0foam.github.io">o0foam.</a>
             <p>原文链接：<a href="https://o0foam.github.io/2019/04/28/浅拷贝&深拷贝/">https://o0foam.github.io/2019/04/28/浅拷贝&深拷贝/</a>
             <p>发表日期：<a href="https://o0foam.github.io/2019/04/28/浅拷贝&深拷贝/">April 28th 2019, 9:51:08 pm</a>
-            <p>更新日期：<a href="https://o0foam.github.io/2019/04/28/浅拷贝&深拷贝/">April 29th 2019, 11:32:17 pm</a>
+            <p>更新日期：<a href="https://o0foam.github.io/2019/04/28/浅拷贝&深拷贝/">May 5th 2019, 9:55:51 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -546,7 +554,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#赋值"><span class="toc-number">1.</span> <span class="toc-text">赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浅拷贝"><span class="toc-number">2.</span> <span class="toc-text">浅拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#可以通过-Object-assign-来进行浅拷贝。"><span class="toc-number">2.0.1.</span> <span class="toc-text">可以通过 Object.assign 来进行浅拷贝。</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#赋值"><span class="toc-number">1.</span> <span class="toc-text">赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#值赋值"><span class="toc-number">1.1.</span> <span class="toc-text">值赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用类型赋值"><span class="toc-number">1.2.</span> <span class="toc-text">引用类型赋值</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#浅拷贝"><span class="toc-number">2.</span> <span class="toc-text">浅拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#方法1，拓展运算符："><span class="toc-number">2.1.</span> <span class="toc-text">方法1，拓展运算符：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法2-Object-assgin"><span class="toc-number">2.2.</span> <span class="toc-text">方法2,Object.assgin:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#深拷贝"><span class="toc-number">3.</span> <span class="toc-text">深拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#拓展运算符Plus："><span class="toc-number">3.1.</span> <span class="toc-text">拓展运算符Plus：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-parse-JSON-stringify"><span class="toc-number">3.2.</span> <span class="toc-text">JSON.parse(JSON.stringify())</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -559,76 +567,6 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -1189,9 +1127,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="others"><span class="iconfont-archer">&#xe606;</span>others</span>
     
-        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
-    
         <span class="sidebar-tag-name" data-tags="css"><span class="iconfont-archer">&#xe606;</span>css</span>
+    
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
     
         <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
     
