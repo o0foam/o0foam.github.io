@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">142</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">157</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -407,7 +407,7 @@ height:50vh;
 <p>3.在数组routes里面添加对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    path: <span class="string">'/tFile'</span>,</span><br><span class="line">    name: <span class="string">'ttFile'</span>,</span><br><span class="line">    component: tttFile</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong> path是地址路径 </strong><br><strong> name可以运用在命名路由 </strong><br><strong> component的对象必须是引入的变量名 </strong></p>
 <h3 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h3><p>打开router里面的index.js，直接在routes添加对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    path: <span class="string">'/tFile'</span>,</span><br><span class="line">    name: <span class="string">'ttFile'</span>,</span><br><span class="line">    component: <span class="built_in">require</span>(<span class="string">'@/components/testFile'</span>).default</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+<h3 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    path:<span class="string">'/tFile'</span>,</span><br><span class="line">    name:<span class="string">'ttFile'</span>,</span><br><span class="line">    component: <span class="function"><span class="params">()</span>=&gt;</span><span class="keyword">import</span> (<span class="string">'@/components/testFile'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </article>
     <!-- license  -->
     
@@ -415,7 +415,7 @@ height:50vh;
             <p>原文作者：<a href="https://o0foam.github.io">o0foam.</a>
             <p>原文链接：<a href="https://o0foam.github.io/2018/12/10/简单vue路由配置/">https://o0foam.github.io/2018/12/10/简单vue路由配置/</a>
             <p>发表日期：<a href="https://o0foam.github.io/2018/12/10/简单vue路由配置/">December 10th 2018, 7:44:56 pm</a>
-            <p>更新日期：<a href="https://o0foam.github.io/2018/12/10/简单vue路由配置/">December 18th 2018, 11:14:33 pm</a>
+            <p>更新日期：<a href="https://o0foam.github.io/2018/12/10/简单vue路由配置/">May 10th 2019, 11:38:06 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -552,7 +552,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法1"><span class="toc-number">1.</span> <span class="toc-text">方法1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法2"><span class="toc-number">2.</span> <span class="toc-text">方法2</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法1"><span class="toc-number">1.</span> <span class="toc-text">方法1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法2"><span class="toc-number">2.</span> <span class="toc-text">方法2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#懒加载"><span class="toc-number">3.</span> <span class="toc-text">懒加载</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -565,30 +565,6 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -1080,12 +1056,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2018/12/25/css闪烁效果/" >css3闪烁效果</a>
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2018/12/25/响应式布局/" >响应式布局</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2018/12/25/响应式布局/" >响应式布局</a>
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2018/12/25/css闪烁效果/" >css3闪烁效果</a>
         </li>
     
     
@@ -1155,9 +1131,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="others"><span class="iconfont-archer">&#xe606;</span>others</span>
     
-        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
-    
         <span class="sidebar-tag-name" data-tags="css"><span class="iconfont-archer">&#xe606;</span>css</span>
+    
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
     
         <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
     
