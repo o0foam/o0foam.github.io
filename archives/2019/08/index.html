@@ -346,215 +346,24 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/28/vuex的搭建与使用/" >
+        <a class="abstract-title" href = "/2019/08/07/数组与数组对象的排序/" >
             
-                <span>vuex的搭建与使用</span>
+                <span>数组与数组对象的排序</span>
         </a>
         <div class="abstract-content">
-            文件目录如下：
-首先通过命令行的方式引入vuex插件：1npm install vuex --save
-在router文件里找到index.js,并引入vuex1.引入vuex1import Vuex from 'vuex'
-2.使用vuex1Vue.use(Vuex)
-在main.js里引入...
+            数组的排序普通数组排序字母排序sort()方法有一个可选参数,是用来确定元素顺序的函数,如果这个参数被省略,则数组中的元素将按照 ASCII 字符顺序进行排序。如:
+123let arr = ["a", "b", "A", "b"];arr.sort();console.log(arr); /...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/28</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/07</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/25/父组件获取子组件的值/" >
-            
-                <span>父组件调用子组件函数</span>
-        </a>
-        <div class="abstract-content">
-            vue文件目录如下：在father.vue组件里输入：1234567891011121314151617&lt;template&gt;    &lt;div&gt;        &lt;child ref="fun"&gt;&lt;/child&gt;    &lt;/div&gt;&lt...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/20/vue2-0同级组件的通信/" >
-            
-                <span>vue2.0同级组件的通信方法</span>
-        </a>
-        <div class="abstract-content">
-            
-
-vue父子组件之间可以通过props和$emit进行通信，但是同级组件的通信会麻烦一点（不用vuex），以下是同级组件的通信方法。
-
-
-目录结构：
-在comunicate.js里面输入12import Vue from "vue";export default new Vue;
-该步骤的目...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/17/vue组件化开发/" >
-            
-                <span>vue组件化开发</span>
-        </a>
-        <div class="abstract-content">
-            文件目录：其中index.vue为父组件，v-common为子组件记得先配置好路由
-组件引入步骤：1.在父组件的script里面用import引入1import vCommon from "./v-common"
-2.用components注册该组件1components: &#123; vC...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/12/vue添加i18n/" >
-            
-                <span>vue添加i18n</span>
-        </a>
-        <div class="abstract-content">
-            1.首先在vue-cli里面用命令行引入i18n1npm install vue-i18n
-2.新建文件夹lang，然后在里面创建en-US.js、zh-CN.js还有language.js，图片如下3.在main.js里面引入vue-i18n插件1import VueI18n from 'v...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/10/简单vue路由配置/" >
-            
-                <span>简单vue路由配置</span>
-        </a>
-        <div class="abstract-content">
-            vue路由默认为Hash模式，可以在routes上添加一个对象1mode: 'history',
-来去掉‘#’号
-方法11.在components里创建一个名为 testFile.vue 文件2.打开router里面的index.js，用import引入文件(tttFile是一个变量名)1im...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/10/vue-cli2.0搭建过程/" >
-            
-                <span>vue-cli2.0搭建过程</span>
-        </a>
-        <div class="abstract-content">
-            搭建vue环境：1.打开命令行并输入指令1npm install -g vue-cli
-2.进入你的文件夹,继续用命令行输入（注：project-name为项目名称）1vue init webpack project-name
-3.命令行输完后会跳出一些简单的vue配置参数，可以按照以下格式进...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
     
 </div>
             
