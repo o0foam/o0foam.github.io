@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>圣杯布局 · Foam&#39;s Studio</title>
+    <title>圣杯布局和双飞翼布局 · Foam&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Foam&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">圣杯布局</a>
+                <a href="#" class="post-name">圣杯布局和双飞翼布局</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            圣杯布局
+            圣杯布局和双飞翼布局
             <!-- 404 -->
             
         </h1>
@@ -264,9 +264,15 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "css">css</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">0</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.5k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -395,7 +401,27 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        
+        <h1 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h1><p>圣杯布局?其实感觉和圣杯并没有什么关系。它只是常见的三栏式布局。即两边定宽,中间自适应的三栏布局,最后呈现的效果如下:<br><img src="/img/圣杯布局1.png" alt="呈现效果"><br>好吧!我们开始来实现这个布局:</p>
+<h2 id="写好基本的-DOM-和-CSS"><a href="#写好基本的-DOM-和-CSS" class="headerlink" title="写好基本的 DOM 和 CSS"></a>写好基本的 DOM 和 CSS</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"middle"</span>&gt;</span></span><br><span class="line">        圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局</span><br><span class="line">        圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局</span><br><span class="line">        圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局</span><br><span class="line">        圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局</span><br><span class="line">        圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局</span><br><span class="line">        圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局 圣杯布局</span><br><span class="line">        圣杯布局 圣杯布局 圣杯布局</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.middle</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#ff3100</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#3ba3d0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#a1f43d</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时呈现效果如下:<br><img src="/img/圣杯布局2.png" alt="呈现效果"><br><strong>这里要注意的是,让中间栏优先渲染</strong></p>
+<h2 id="给每个子元素设置浮动"><a href="#给每个子元素设置浮动" class="headerlink" title="给每个子元素设置浮动"></a>给每个子元素设置浮动</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.middle</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#ff3100</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#3ba3d0</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#a1f43d</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时呈现效果如下:<br><img src="/img/圣杯布局3.png" alt="呈现效果"></p>
+<h3 id="使子元素显示在同一行"><a href="#使子元素显示在同一行" class="headerlink" title="使子元素显示在同一行"></a>使子元素显示在同一行</h3><p>添加了 float: 200px 后,本应该在同一排显示的,但因为我们给中间的子元素设置的宽度是 100%,所以其他两个元素被”挤”到了下面,接下来我们要做的是将 <strong>.left</strong> 和 <strong>.right</strong> 向上提,我们只要将 <strong>.left</strong> 设置成 <strong>margin-left: -100%</strong>(负的中间子元素宽度),<strong>.right</strong> 设置成 <strong>margin-left: -200px</strong> (负的自身宽度)。<br>此时呈现效果如下:<br><img src="/img/圣杯布局4.png" alt="呈现效果"></p>
+<h2 id="使中间的子元素不被覆盖"><a href="#使中间的子元素不被覆盖" class="headerlink" title="使中间的子元素不被覆盖"></a>使中间的子元素不被覆盖</h2><p>现在可以自适应了,可以拖动看看,但会发现一个问题,中间的子元素被遮挡了。此时我们只要让中间的自由幻速现实的宽度刚好为左右元素和右边元素现实中间的宽度就可以。其实方法就是设置父元素 <strong>.container</strong> 的 padding-left 为左边子元素的宽度,padding-right 设置为右边子元素的宽度。在这里是<strong>padding: 0 200px</strong><br>此时呈现效果如下:<br><img src="/img/圣杯布局5.png" alt="呈现效果"></p>
+<h2 id="将左边和右边的子元素向两边移动"><a href="#将左边和右边的子元素向两边移动" class="headerlink" title="将左边和右边的子元素向两边移动"></a>将左边和右边的子元素向两边移动</h2><p>最后用相对定位的方式,将左边的子元素和右边的子元素向两边移动即可。<br>最终的 CSS 代码如下:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.middle</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#ff3100</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#3ba3d0</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#a1f43d</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>完成!赶紧试试吧~</p>
+<h1 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h1><p>其实双飞翼布局是为了解决圣杯布局的弊端提出的。上述代码,当你将浏览器的宽度缩短到中间子元素的宽度比左右子元素的宽度小时,就会出现问题。<br>效果如下:<br><img src="/img/圣杯布局6.png" alt="呈现效果"><br>因此,在使用圣杯布局的时候,<strong><em>请一定要设置整个容器的最小宽度。</em></strong></p>
+<h2 id="双飞翼布局和圣杯布局的区别"><a href="#双飞翼布局和圣杯布局的区别" class="headerlink" title="双飞翼布局和圣杯布局的区别"></a>双飞翼布局和圣杯布局的区别</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">圣杯布局和双飞翼布局解决问题的方案是前一半相同,也就是三栏全部 float 浮动,但左右两栏加上负 margin 让其跟中间栏 div 并排,以形成三栏布局。</span><br><span class="line"></span><br><span class="line">不同在于解决"中间栏 div 内容不被遮挡"问题思路不一样:圣杯布局,为了中间 div 内容不被遮挡,将中间 div 设置了左右 padding-left 和 padding-right 后,将左右两个 div 用布局 position:relative 并分别分配 right 和 left 属性,以便左右两栏 div 移动后不遮挡 div。</span><br><span class="line"></span><br><span class="line"><span class="strong">**双飞翼布局,为了中间 div 内容不被遮挡,直接在中间 div 内部创建子 div 用于放置内容,在该子 div 里用 margin-left 和 margin-right 为左右两栏 div 留出位置。**</span></span><br><span class="line"></span><br><span class="line">作者：知乎用户</span><br><span class="line">链接：[<span class="string">https://www.zhihu.com/question/21504052/answer/50053054</span>](<span class="link">https://www.zhihu.com/question/21504052/answer/50053054</span>)</span><br><span class="line">来源：知乎</span><br><span class="line">著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
+<p>所以只是一个小小的改动:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"middle-container"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"middle"</span>&gt;</span></span><br><span class="line">            双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局</span><br><span class="line">            双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局</span><br><span class="line">            双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局</span><br><span class="line">            双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局</span><br><span class="line">            双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局 双飞翼布局</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.middle</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">margin-right</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.middle-container</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#ff3100</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#3ba3d0</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#a1f43d</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时呈现效果如下:<br><img src="/img/双飞翼布局1.png" alt="呈现效果"></p>
+<blockquote>
+<p>参考资料:<br>作者：sunshine 小小倩<br>链接：<a href="https://juejin.im/post/599970f4518825243a78b9d5" target="_blank" rel="noopener">https://juejin.im/post/599970f4518825243a78b9d5</a></p>
+</blockquote>
+
     </article>
     <!-- license  -->
     
@@ -403,7 +429,7 @@ height:50vh;
             <p>原文作者：<a href="https://o0foam.github.io">o0foam.</a>
             <p>原文链接：<a href="https://o0foam.github.io/2020/09/22/圣杯布局/">https://o0foam.github.io/2020/09/22/圣杯布局/</a>
             <p>发表日期：<a href="https://o0foam.github.io/2020/09/22/圣杯布局/">September 22nd 2020, 11:55:07 pm</a>
-            <p>更新日期：<a href="https://o0foam.github.io/2020/09/22/圣杯布局/">September 22nd 2020, 11:55:07 pm</a>
+            <p>更新日期：<a href="https://o0foam.github.io/2020/09/22/圣杯布局/">September 23rd 2020, 12:07:11 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -535,7 +561,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#圣杯布局"><span class="toc-number">1.</span> <span class="toc-text">圣杯布局</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#写好基本的-DOM-和-CSS"><span class="toc-number">1.1.</span> <span class="toc-text">写好基本的 DOM 和 CSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#给每个子元素设置浮动"><span class="toc-number">1.2.</span> <span class="toc-text">给每个子元素设置浮动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使子元素显示在同一行"><span class="toc-number">1.2.1.</span> <span class="toc-text">使子元素显示在同一行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使中间的子元素不被覆盖"><span class="toc-number">1.3.</span> <span class="toc-text">使中间的子元素不被覆盖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将左边和右边的子元素向两边移动"><span class="toc-number">1.4.</span> <span class="toc-text">将左边和右边的子元素向两边移动</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#双飞翼布局"><span class="toc-number">2.</span> <span class="toc-text">双飞翼布局</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#双飞翼布局和圣杯布局的区别"><span class="toc-number">2.1.</span> <span class="toc-text">双飞翼布局和圣杯布局的区别</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -548,8 +574,6 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
     
     
     
@@ -991,7 +1015,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/22</span><a class="archive-post-title" href= "/2020/09/22/圣杯布局/" >圣杯布局</a>
+            <span class="archive-post-date">09/22</span><a class="archive-post-title" href= "/2020/09/22/圣杯布局/" >圣杯布局和双飞翼布局</a>
         </li>
     
     
@@ -1104,12 +1128,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2018/12/25/响应式布局/" >响应式布局</a>
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2018/12/25/css闪烁效果/" >css3闪烁效果</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2018/12/25/css闪烁效果/" >css3闪烁效果</a>
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2018/12/25/响应式布局/" >响应式布局</a>
         </li>
     
     
@@ -1154,12 +1178,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2018/12/10/简单vue路由配置/" >简单vue路由配置</a>
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2018/12/10/vue-cli2.0搭建过程/" >vue-cli2.0搭建过程</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2018/12/10/vue-cli2.0搭建过程/" >vue-cli2.0搭建过程</a>
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2018/12/10/简单vue路由配置/" >简单vue路由配置</a>
         </li>
     
     
@@ -1177,11 +1201,11 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="移动端"><span class="iconfont-archer">&#xe606;</span>移动端</span>
+        <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
     
         <span class="sidebar-tag-name" data-tags="others"><span class="iconfont-archer">&#xe606;</span>others</span>
     
-        <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
+        <span class="sidebar-tag-name" data-tags="移动端"><span class="iconfont-archer">&#xe606;</span>移动端</span>
     
         <span class="sidebar-tag-name" data-tags="css"><span class="iconfont-archer">&#xe606;</span>css</span>
     
