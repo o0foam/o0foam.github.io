@@ -407,7 +407,7 @@ height:50vh;
 <p>此时呈现效果如下:<br><img src="/img/圣杯布局2.png" alt="呈现效果"><br><strong>这里要注意的是,让中间栏优先渲染</strong></p>
 <h2 id="给每个子元素设置浮动"><a href="#给每个子元素设置浮动" class="headerlink" title="给每个子元素设置浮动"></a>给每个子元素设置浮动</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.middle</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#ff3100</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#3ba3d0</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#a1f43d</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此时呈现效果如下:<br><img src="/img/圣杯布局3.png" alt="呈现效果"></p>
-<h3 id="使子元素显示在同一行"><a href="#使子元素显示在同一行" class="headerlink" title="使子元素显示在同一行"></a>使子元素显示在同一行</h3><p>添加了 float: 200px 后,本应该在同一排显示的,但因为我们给中间的子元素设置的宽度是 100%,所以其他两个元素被”挤”到了下面,接下来我们要做的是将 <strong>.left</strong> 和 <strong>.right</strong> 向上提,我们只要将 <strong>.left</strong> 设置成 <strong>margin-left: -100%</strong>(负的中间子元素宽度),<strong>.right</strong> 设置成 <strong>margin-left: -200px</strong> (负的自身宽度)。<br>此时呈现效果如下:<br><img src="/img/圣杯布局4.png" alt="呈现效果"></p>
+<h3 id="使子元素显示在同一行"><a href="#使子元素显示在同一行" class="headerlink" title="使子元素显示在同一行"></a>使子元素显示在同一行</h3><p>添加了 float: left 后,本应该在同一排显示的,但因为我们给中间的子元素设置的宽度是 100%,所以其他两个元素被”挤”到了下面,接下来我们要做的是将 <strong>.left</strong> 和 <strong>.right</strong> 向上提,我们只要将 <strong>.left</strong> 设置成 <strong>margin-left: -100%</strong>(负的中间子元素宽度),<strong>.right</strong> 设置成 <strong>margin-left: -200px</strong> (负的自身宽度)。<br>此时呈现效果如下:<br><img src="/img/圣杯布局4.png" alt="呈现效果"></p>
 <h2 id="使中间的子元素不被覆盖"><a href="#使中间的子元素不被覆盖" class="headerlink" title="使中间的子元素不被覆盖"></a>使中间的子元素不被覆盖</h2><p>现在可以自适应了,可以拖动看看,但会发现一个问题,中间的子元素被遮挡了。此时我们只要让中间的自由幻速现实的宽度刚好为左右元素和右边元素现实中间的宽度就可以。其实方法就是设置父元素 <strong>.container</strong> 的 padding-left 为左边子元素的宽度,padding-right 设置为右边子元素的宽度。在这里是<strong>padding: 0 200px</strong><br>此时呈现效果如下:<br><img src="/img/圣杯布局5.png" alt="呈现效果"></p>
 <h2 id="将左边和右边的子元素向两边移动"><a href="#将左边和右边的子元素向两边移动" class="headerlink" title="将左边和右边的子元素向两边移动"></a>将左边和右边的子元素向两边移动</h2><p>最后用相对定位的方式,将左边的子元素和右边的子元素向两边移动即可。<br>最终的 CSS 代码如下:</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.middle</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#ff3100</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#3ba3d0</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#a1f43d</span>;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">margin-left</span>: -<span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -429,7 +429,7 @@ height:50vh;
             <p>原文作者：<a href="https://o0foam.github.io">o0foam.</a>
             <p>原文链接：<a href="https://o0foam.github.io/2020/09/22/圣杯布局/">https://o0foam.github.io/2020/09/22/圣杯布局/</a>
             <p>发表日期：<a href="https://o0foam.github.io/2020/09/22/圣杯布局/">September 22nd 2020, 11:55:07 pm</a>
-            <p>更新日期：<a href="https://o0foam.github.io/2020/09/22/圣杯布局/">September 23rd 2020, 12:07:11 am</a>
+            <p>更新日期：<a href="https://o0foam.github.io/2020/09/22/圣杯布局/">September 23rd 2020, 9:10:27 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -574,6 +574,30 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1201,9 +1225,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
-    
         <span class="sidebar-tag-name" data-tags="others"><span class="iconfont-archer">&#xe606;</span>others</span>
+    
+        <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
     
         <span class="sidebar-tag-name" data-tags="移动端"><span class="iconfont-archer">&#xe606;</span>移动端</span>
     
